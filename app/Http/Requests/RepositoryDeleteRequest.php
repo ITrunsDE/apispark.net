@@ -14,7 +14,7 @@ class RepositoryDeleteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'confirmed'
+            'name' => 'confirmed',
         ];
     }
 }

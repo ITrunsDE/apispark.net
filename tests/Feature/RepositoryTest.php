@@ -30,7 +30,7 @@ class RepositoryTest extends TestCase
     }
 
     /** @test **/
-    public function authenticated_user_can_create_a_new_repository ()
+    public function authenticated_user_can_create_a_new_repository()
     {
         $user = User::factory()->create();
 
