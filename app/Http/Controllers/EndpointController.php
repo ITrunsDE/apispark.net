@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EndpointStoreRequest;
 use App\Http\Requests\EndpointUpdateRequest;
 use App\Models\Endpoint;
-use App\Models\Repository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class EndpointController extends Controller
 {
