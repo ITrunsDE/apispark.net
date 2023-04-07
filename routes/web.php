@@ -25,4 +25,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
 });
+
+
+Route::get(uri: '/job-wizard', action: \App\Http\Livewire\JobWizard::class)->name('job-wizard');
+
