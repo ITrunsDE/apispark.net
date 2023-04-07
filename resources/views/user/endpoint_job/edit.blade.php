@@ -100,7 +100,7 @@
                                     <div class="mt-2">
                                         <div class="flex items-center">
                                             <button type="button"
-                                                    x-data="{ isOn: {{ ($endpointJob->active ?? '') }} }"
+                                                    x-data="{ isOn: {{ $endpointJob->active ? 'true': 'false' }} }"
                                                     @click="isOn = !isOn"
                                                     :aria-checked="isOn"
                                                     :class="{'bg-sky-600': isOn, 'bg-gray-200 dark:bg-gray-400': !isOn }"
