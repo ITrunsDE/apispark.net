@@ -45,7 +45,7 @@ class RepositoryController extends Controller
 
     public function show(Repository $repository)
     {
-        //
+        //todo: create show view with information about where the
     }
 
     public function edit(Repository $repository): View

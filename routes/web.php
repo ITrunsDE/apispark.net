@@ -29,6 +29,9 @@ Route::middleware([
     // Repository
     Route::resource(name: 'repository', controller: \App\Http\Controllers\RepositoryController::class);
 
+    // Endpoint
+    Route::resource(name: 'endpoint', controller: \App\Http\Controllers\EndpointController::class);
+
 });
 
 Route::get(uri: 'job-wizard', action: \App\Http\Livewire\JobWizard::class)->name('job-wizard');

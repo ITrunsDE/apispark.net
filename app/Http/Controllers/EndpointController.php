@@ -2,64 +2,73 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EndpointStoreRequest;
+use App\Http\Requests\EndpointUpdateRequest;
 use App\Models\Endpoint;
+use App\Models\Repository;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class EndpointController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(): View
     {
-        //
+        $endpoints = Endpoint::query()
+            ->where(column: 'user_id', operator: '=', value: auth()->id())
+            ->orderBy(column: 'name')
+            ->get();
+
+        return view(
+            view: 'user.endpoint.index',
+            data: compact('endpoints')
+        );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(): View
     {
-        //
+        return view(
+            view: 'user.endpoint.create'
+        );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(EndpointStoreRequest $request): RedirectResponse
     {
-        //
+        $data = $request->validated();
+
+        // add user for the endpoint
+        $data['user_id'] = auth()->id();
+
+        Endpoint::create($data);
+
+        return to_route(route: 'endpoint.index')->banner('Endpoint was created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Endpoint $endpoint)
     {
-        //
+        //todo: create show view with information about where the
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Endpoint $endpoint)
+    public function edit(Endpoint $endpoint): View
     {
-        //
+        return view(
+            view: 'user.endpoint.edit',
+            data: compact('endpoint'),
+        );
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Endpoint $endpoint)
+    public function update(EndpointUpdateRequest $request, Endpoint $endpoint)
     {
-        //
+        $data = $request->validated();
+        $endpoint->update($data);
+
+        return to_route(route: 'endpoint.index')->banner('Endpoint was updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Endpoint $endpoint)
     {
-        //
+        $endpoint->delete();
+
+        return to_route(route: 'endpoint.index')->banner('Endpoint was deleted successfully.');
     }
 }
