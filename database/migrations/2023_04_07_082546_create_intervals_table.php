@@ -16,8 +16,6 @@ return new class extends Migration
 
             $table->string('name')->unique();
             $table->unsignedBigInteger('interval')->unique()->comment('specified in minutes');
-
-            $table->timestamps();
         });
     }
 

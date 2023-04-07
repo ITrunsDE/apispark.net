@@ -2,26 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Database\Seeders\IntervalSeeder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Repository extends Model
+class EndpointJob extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'name',
-        'ingest_token',
+        'repository_id',
+        'interval_id',
         'active',
+        'last_run',
     ];
 
     protected $casts = [
         'active' => 'boolean',
-        'ingest_token' => 'uuid',
+        'last_run' => 'datetime',
     ];
 
     public function user(): BelongsTo
@@ -29,8 +29,13 @@ class Repository extends Model
         return $this->belongsTo(related: User::class);
     }
 
-    public function endpointJobs(): HasMany
+    public function repository(): BelongsTo
     {
-        return $this->hasMany(related: EndpointJob::class);
+        return $this->belongsTo(related: Repository::class);
+    }
+
+    public function interval(): BelongsTo
+    {
+        return $this->belongsTo(Interval::class);
     }
 }

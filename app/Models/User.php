@@ -37,4 +37,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(related: Endpoint::class);
     }
+
+    public function endpointJobs(): HasMany
+    {
+        return $this->hasMany(related: EndpointJob::class);
+    }
 }
