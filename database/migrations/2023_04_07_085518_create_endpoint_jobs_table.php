@@ -16,11 +16,14 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('repository_id');
+            $table->unsignedBigInteger('endpoint_id');
             $table->unsignedBigInteger('interval_id');
-            $table->boolean('active');
-            $table->datetime('last_run');
+            $table->boolean('active')->default(true);
+            $table->string('name');
+            $table->datetime('last_run')->nullable();
 
             $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();
+            $table->foreign('endpoint_id')->on('endpoints')->references('id')->cascadeOnDelete();
             $table->foreign('repository_id')->on('repositories')->references('id')->cascadeOnDelete();
             $table->foreign('interval_id')->on('intervals')->references('id')->cascadeOnDelete();
 

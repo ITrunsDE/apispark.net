@@ -8,7 +8,7 @@
                 <div class="hidden lg:ml-8 lg:flex lg:space-x-4">
                     <a href="{{ route('dashboard') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Dashboard</a>
 
-                    <a href="{{ route('job-wizard') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Jobs</a>
+                    <a href="{{ route('endpoint-job.index') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Jobs</a>
 
                     <a href="{{ route('endpoint.index') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Endpoints</a>
 
@@ -145,7 +145,7 @@
 {{--                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">--}}
 {{--                        {{ __('Dashboard') }}--}}
 {{--                    </x-nav-link>--}}
-{{--                    <x-nav-link href="{{ route('job-wizard') }}" :active="request()->routeIs('job-wizard')">--}}
+{{--                    <x-nav-link href="{{ route('endpointjob-wizard') }}" :active="request()->routeIs('endpointjob-wizard')">--}}
 {{--                        {{ __('Job-Wizard') }}--}}
 {{--                    </x-nav-link>--}}
 {{--                </div>--}}
@@ -273,7 +273,7 @@
 {{--            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">--}}
 {{--                {{ __('Dashboard') }}--}}
 {{--            </x-responsive-nav-link>--}}
-{{--            <x-responsive-nav-link href="{{ route('job-wizard') }}" :active="request()->routeIs('job-wizard')">--}}
+{{--            <x-responsive-nav-link href="{{ route('endpointjob-wizard') }}" :active="request()->routeIs('endpointjob-wizard')">--}}
 {{--                {{ __('Job-Wizard') }}--}}
 {{--            </x-responsive-nav-link>--}}
 {{--        </div>--}}

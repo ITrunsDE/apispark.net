@@ -32,6 +32,9 @@ Route::middleware([
     // Endpoint
     Route::resource(name: 'endpoint', controller: \App\Http\Controllers\EndpointController::class);
 
+    // EndpointJob
+    Route::resource(name: 'endpoint-job', controller: \App\Http\Controllers\EndpointJobController::class);
+
 });
 
-Route::get(uri: 'job-wizard', action: \App\Http\Livewire\JobWizard::class)->name('job-wizard');
+Route::get(uri: 'endpointjob-wizard', action: \App\Http\Livewire\JobWizard::class)->name('endpointjob-wizard');

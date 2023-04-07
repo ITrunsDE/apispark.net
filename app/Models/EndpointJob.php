@@ -11,11 +11,13 @@ class EndpointJob extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'repository_id',
-        'interval_id',
         'active',
+        'endpoint_id',
+        'interval_id',
         'last_run',
+        'name',
+        'repository_id',
+        'user_id',
     ];
 
     protected $casts = [
@@ -36,5 +38,10 @@ class EndpointJob extends Model
     public function interval(): BelongsTo
     {
         return $this->belongsTo(Interval::class);
+    }
+
+    public function endpoint(): BelongsTo
+    {
+        return $this->belongsTo(related: Endpoint::class);
     }
 }
