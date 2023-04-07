@@ -1,3 +1,4 @@
+@php use App\Models\Interval; @endphp
 <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
         {{ __('Dashboard') }}
@@ -91,9 +92,9 @@
         </nav>
 
 
-        <div class="border-b border-gray-200 pb-5 pt-5 mb-5">
-            <h3 class="text-base font-semibold leading-6 text-gray-900">Step 1 - Select or create repository</h3>
-        </div>
+        <x-basic-card-header>
+            Step 1 - Select or create repository
+        </x-basic-card-header>
 
 
         {{--//====================================================================================================\\--}}
@@ -228,10 +229,9 @@
             </ol>
         </nav>
 
-        <div class="border-b border-gray-200 pb-5 pt-5 mb-5">
-            <h3 class="text-base font-semibold leading-6 text-gray-900">Step 2 - Select or create your API endpoint
-                configuration</h3>
-        </div>
+        <x-basic-card-header>
+            Step 2 - Select or create your API endpoint configuration
+        </x-basic-card-header>
 
         <form>
             <div class="space-y-12">
@@ -262,15 +262,23 @@
 
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Additional Information</h2>
-                    <p class="mt-1 text-sm leading-6 text-gray-600">Sometimes we need more informations to connect to the API endpoint.</p>
+                    <p class="mt-1 text-sm leading-6 text-gray-600">Sometimes we need more informations to connect to
+                        the API endpoint.</p>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
                         <div class="sm:col-span-4">
-                            <label for="authentication_bearer" class="block text-sm font-medium leading-6 text-gray-900">Authentication Bearer</label>
+                            <label for="authentication_bearer"
+                                   class="block text-sm font-medium leading-6 text-gray-900">Authentication
+                                Bearer</label>
                             <div class="mt-2">
-                                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                    <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">Bearer </span>
-                                    <input type="text" name="authentication_bearer" id="authentication_bearer" autocomplete="authentication_bearer" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="super_secret_password">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                    <span
+                                        class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">Bearer </span>
+                                    <input type="text" name="authentication_bearer" id="authentication_bearer"
+                                           autocomplete="authentication_bearer"
+                                           class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                           placeholder="super_secret_password">
                                 </div>
                             </div>
                         </div>
@@ -380,9 +388,9 @@
             </ol>
         </nav>
 
-        <div class="border-b border-gray-200 pb-5 pt-5 mb-5">
-            <h3 class="text-base font-semibold leading-6 text-gray-900">Step 3 - Select the interval the job should run</h3>
-        </div>
+        <x-basic-card-header>
+            Step 3 - Select the interval the job should run
+        </x-basic-card-header>
 
         <form>
             <div class="space-y-12">
@@ -392,11 +400,13 @@
 
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="sm:col-span-3">
-                            <label for="interval" class="block text-sm font-medium leading-6 text-gray-900">Run ... </label>
+                            <label for="interval" class="block text-sm font-medium leading-6 text-gray-900">Run
+                                ... </label>
                             <div class="mt-2">
-                                <select id="interval" name="interval" autocomplete="interval" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <select id="interval" name="interval" autocomplete="interval"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
 
-                                    @foreach(\App\Models\Interval::orderBy('interval')->get() as $interval)
+                                    @foreach(Interval::orderBy('interval')->get() as $interval)
                                         <option value="{{ $interval->id }}">{{ $interval->name }}</option>
                                     @endforeach
                                 </select>
@@ -411,11 +421,13 @@
 
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="sm:col-span-3">
-                            <label for="interval" class="block text-sm font-medium leading-6 text-gray-900">Run ... </label>
+                            <label for="interval" class="block text-sm font-medium leading-6 text-gray-900">Run
+                                ... </label>
                             <div class="mt-2">
-                                <select id="interval" name="interval" autocomplete="interval" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <select id="interval" name="interval" autocomplete="interval"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
 
-                                    @foreach(\App\Models\Interval::orderBy('interval')->get() as $interval)
+                                    @foreach(Interval::orderBy('interval')->get() as $interval)
                                         <option value="{{ $interval->id }}">{{ $interval->name }}</option>
                                     @endforeach
                                 </select>

@@ -12,7 +12,7 @@
 
                     <a href="{{ route('job-wizard') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Endpoints</a>
 
-                    <a href="{{ route('job-wizard') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Repositories</a>
+                    <a href="{{ route('repository.index') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Repositories</a>
 
                 </div>
             </div>

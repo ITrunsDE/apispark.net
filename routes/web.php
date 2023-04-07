@@ -26,9 +26,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    // Repository
+    Route::resource(name: 'repository', controller: \App\Http\Controllers\RepositoryController::class);
 
 });
 
 
-Route::get(uri: '/job-wizard', action: \App\Http\Livewire\JobWizard::class)->name('job-wizard');
+Route::get(uri: 'job-wizard', action: \App\Http\Livewire\JobWizard::class)->name('job-wizard');
 
