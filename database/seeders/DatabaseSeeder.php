@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
         // run additional seeders
         $this->call([
             IntervalSeeder::class,
+            TestUserSeeder::class,
         ]);
     }
 }
