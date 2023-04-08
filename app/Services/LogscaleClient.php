@@ -10,11 +10,15 @@ final class LogscaleClient extends HTTP
 {
 
     public array $messages = [];
+    public string $identifier = 'host';
+
+    public array $events = [];
 
     public function __construct(
         public readonly string $repository,
         public readonly string $ingest_token,
-        public string          $base_url
+        public string          $base_url,
+        public readonly string $host
     )
     {
         // check if the base url is correct
@@ -32,8 +36,8 @@ final class LogscaleClient extends HTTP
     public function create_unstructured_element(string|array $messages): void
     {
         // check if array, and parse each line
-        if(is_array($messages)) {
-            foreach($messages as $message) {
+        if (is_array($messages)) {
+            foreach ($messages as $message) {
                 $this->create_unstructured_element($message);
             }
         } else {
@@ -41,11 +45,19 @@ final class LogscaleClient extends HTTP
         }
     }
 
-    public function send_unstructured_data(string $name, string $identifier='host'): Response
+    public function create_structured_event(array $messages): void
+    {
+        $this->events[] = [
+            'timestamp' => now(),
+            'attributes' => $messages
+        ];
+    }
+
+    public function send_unstructured_data(): Response
     {
         $data = [[
             'fields' => [
-                $identifier => $name
+                $this->identifier => $this->host
             ],
             'messages' => $this->messages
         ]];
@@ -53,9 +65,16 @@ final class LogscaleClient extends HTTP
         return $this->client->post(url: config(key: 'logscale.ingest_unstructured_data'), data: $data);
     }
 
-    public function ingest_structured_data($data): Response
+    public function send_structured_data(): Response
     {
-        return $this->client->post(url: config(key: 'logscale.ingest_structured_data'), data: 'data');
+        $data = [[
+            'tags' => [
+                $this->identifier => $this->host
+            ],
+            'events' => $this->events
+        ]];
+
+        return $this->client->post(url: config(key: 'logscale.ingest_structured_data'), data: $data);
     }
 
     public function ingest_json_data($data): Response
