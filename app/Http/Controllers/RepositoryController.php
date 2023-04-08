@@ -73,7 +73,6 @@ class RepositoryController extends Controller
 
     public function destroy(RepositoryDeleteRequest $request, Repository $repository)
     {
-
         $repository->delete();
 
         return to_route(route: 'repository.index')->banner('Repository was deleted successfully.');
@@ -82,6 +81,7 @@ class RepositoryController extends Controller
     public function send_verification(Repository $repository): RedirectResponse
     {
         $repository->send_verification();
+
         return to_route(route: 'repository.edit', parameters: $repository)->banner('Repository verification token was send.');
     }
 

@@ -47,7 +47,7 @@ class Repository extends Model
     public function send_verification(): bool
     {
         // only send if not verified
-        if(!is_null($this->verified_at)) {
+        if (! is_null($this->verified_at)) {
             return false;
         }
 
@@ -59,7 +59,7 @@ class Repository extends Model
         );
 
         $logscale->create_structured_event([
-            'verification_token' => $this->verification_token
+            'verification_token' => $this->verification_token,
         ])->send();
 
         return true;

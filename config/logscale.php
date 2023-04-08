@@ -8,5 +8,5 @@ return [
     'base_urls' => [
         'cloud.community.humio.com',
         'cloud.humio.com',
-    ]
+    ],
 ];

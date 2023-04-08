@@ -87,6 +87,7 @@ final class LogscaleClient extends HTTP
         } else {
             $this->messages[] = $messages;
         }
+
         return $this;
     }
 
@@ -96,6 +97,7 @@ final class LogscaleClient extends HTTP
             'timestamp' => now(),
             'attributes' => $messages,
         ];
+
         return $this;
     }
 

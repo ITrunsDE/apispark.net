@@ -28,8 +28,8 @@ Route::middleware([
 
     // Repository
     Route::resource(name: 'repository', controller: \App\Http\Controllers\RepositoryController::class);
-    Route::get(uri: 'repository/{repository}/send-verification-token',action: [\App\Http\Controllers\RepositoryController::class, 'send_verification'])->name(name: 'repository.send-verification-token');
-    Route::post(uri: 'repository/{repository}/verify-verification-token',action: [\App\Http\Controllers\RepositoryController::class, 'verify_repository'])->name(name: 'repository.verify-verification-token');
+    Route::get(uri: 'repository/{repository}/send-verification-token', action: [\App\Http\Controllers\RepositoryController::class, 'send_verification'])->name(name: 'repository.send-verification-token');
+    Route::post(uri: 'repository/{repository}/verify-verification-token', action: [\App\Http\Controllers\RepositoryController::class, 'verify_repository'])->name(name: 'repository.verify-verification-token');
 
     // Endpoint
     Route::resource(name: 'endpoint', controller: \App\Http\Controllers\EndpointController::class);
