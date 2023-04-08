@@ -17,6 +17,16 @@
                     </div>
                 </div>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form method="POST" action="{{ route('repository.store') }}">
                     @csrf
 
@@ -27,13 +37,31 @@
                                 a new link to your repository at Logscale.</p>
 
                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                                <div class="sm:col-span-2">
+
+                                <div class="sm:col-span-4">
                                     <label for="name"
                                            class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                     <div class="mt-2">
                                         <input type="text" name="name" id="name" autocomplete="repository-name"
                                                value="{{ old(key: 'name') }}"
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+
+                                </div>
+
+                                <div class="sm:col-span-2">
+                                    <label for="base_url" class="block text-sm font-medium leading-6 text-gray-900">
+                                        Used cloud instance
+                                    </label>
+                                    <div class="mt-2">
+                                        <select id="base_url" name="base_url" autocomplete="base_url"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                            @foreach(config(key: 'logscale.base_urls') as $urls)
+                                                <option value="https://{{ $urls }}">{{ $urls }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
 

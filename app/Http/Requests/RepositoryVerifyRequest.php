@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RepositoryStoreRequest extends FormRequest
+class RepositoryVerifyRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -14,9 +14,7 @@ class RepositoryStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'ingest_token' => 'required|uuid',
-            'base_url' => 'required|url',
+            'verification_token' => 'required|uuid',
         ];
     }
 }

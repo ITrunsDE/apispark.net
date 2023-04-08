@@ -77,7 +77,7 @@ final class LogscaleClient extends HTTP
         return true;
     }
 
-    public function create_unstructured_element(string|array $messages): void
+    public function create_unstructured_element(string|array $messages): LogscaleClient
     {
         // check if array, and parse each line
         if (is_array($messages)) {
@@ -87,14 +87,16 @@ final class LogscaleClient extends HTTP
         } else {
             $this->messages[] = $messages;
         }
+        return $this;
     }
 
-    public function create_structured_event(array $messages): void
+    public function create_structured_event(array $messages): LogscaleClient
     {
         $this->events[] = [
             'timestamp' => now(),
             'attributes' => $messages,
         ];
+        return $this;
     }
 
     public function ingest_json_data($data): Response

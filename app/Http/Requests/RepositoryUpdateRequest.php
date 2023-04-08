@@ -6,9 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class RepositoryUpdateRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
@@ -19,6 +16,7 @@ class RepositoryUpdateRequest extends FormRequest
         return [
             'name' => 'required|string',
             'ingest_token' => 'required|uuid',
+            'base_url' => 'required|url',
         ];
     }
 }

@@ -32,9 +32,11 @@ class TestUserSeeder extends Seeder
             'name' => 'Repo_Test',
             'ingest_token' => 'b252f742-a20e-46cd-a15a-542205cab68c',
             'active' => 1,
+            'base_url' => 'https://cloud.community.humio.com',
+            'verification_token' => uuid_create(),
         ]);
 
-        // create test endppint
+        // create test endpoint
         DB::table(table: 'endpoints')->insert([
             'user_id' => 1,
             'name' => 'Endpoint_Test',
