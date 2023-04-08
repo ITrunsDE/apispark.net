@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
 
             $table->string('name');
-            $table->uuid('ingest_token')->nullable();
+            $table->uuid('ingest_token')->nullable()->unique();
             $table->boolean('active')->default(true);
             $table->string('verification_token');
             $table->datetime('verified_at')->nullable();

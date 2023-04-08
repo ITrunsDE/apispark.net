@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RepositoryDeleteRequest;
 use App\Http\Requests\RepositoryStoreRequest;
-use App\Http\Requests\RepositoryUpdateRequest;
 use App\Http\Requests\RepositoryVerifyRequest;
 use App\Models\Repository;
+use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class RepositoryController extends Controller
 {
@@ -62,9 +64,17 @@ class RepositoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(RepositoryUpdateRequest $request, Repository $repository)
+    public function update(Request $request, Repository $repository)
     {
-        $data = $request->validated();
+        $data = $request->validate([
+            'name' => 'required|string',
+            'ingest_token' => [
+                'required',
+                'uuid',
+                Rule::unique('repositories')->ignore($repository),
+            ],
+            'base_url' => 'required|url',
+        ]);
 
         $repository->update($data);
 

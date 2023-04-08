@@ -21,8 +21,10 @@ class RepositoryFactory extends Factory
         return [
             'user_id' => User::factory()->create(),
             'name' => fake()->name(),
-            'ingest_token' => fake()->url(),
+            'ingest_token' => fake()->uuid(),
             'active' => fake()->boolean(),
+            'verification_token' => fake()->uuid(),
+            'base_url' => 'https://' . fake()->randomElement(config('logscale.base_urls')),
         ];
     }
 }

@@ -15,7 +15,7 @@ class RepositoryStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'ingest_token' => 'required|uuid',
+            'ingest_token' => 'required|uuid|unique:repositories,ingest_token',
             'base_url' => 'required|url',
         ];
     }
