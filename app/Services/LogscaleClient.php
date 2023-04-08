@@ -5,6 +5,8 @@ namespace App\Services;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use function Exception;
+use function PHPUnit\Framework\throwException;
 
 final class LogscaleClient extends HTTP
 {
@@ -29,8 +31,52 @@ final class LogscaleClient extends HTTP
         // create a client with all the headers
         $this->client = self::withToken(token: $this->ingest_token)
             ->baseUrl(url: $this->base_url)
-//            ->withHeaders(['Content-Type' => 'application/json'])
             ->acceptJson();
+    }
+
+    public function send(): bool
+    {
+        $send = false;
+        $url = '';
+        $data = [];
+
+        // send all data
+        if(count($this->events) > 0) {
+            // structured_data
+            $data = [[
+                'tags' => [
+                    $this->identifier => $this->host
+                ],
+                'events' => $this->events
+            ]];
+
+            $url = config(key: 'logscale.ingest_structured_data');
+            $send = true;
+        } elseif(count($this->messages) > 0) {
+            // unstructured_data
+            $data = [[
+                'fields' => [
+                    $this->identifier => $this->host
+                ],
+                'messages' => $this->messages
+            ]];
+
+            $url = config(key: 'logscale.ingest_unstructured_data');
+            $send = true;
+        }
+
+        // if we got data to send
+        if($send) {
+            $response = $this->client->post(url: $url, data: $data);
+
+            if($response->successful()) {
+                return true;
+            }
+
+            // ToDo: handle exceptions for any error
+            dd($response->body());
+        }
+        return true;
     }
 
     public function create_unstructured_element(string|array $messages): void
@@ -51,30 +97,6 @@ final class LogscaleClient extends HTTP
             'timestamp' => now(),
             'attributes' => $messages
         ];
-    }
-
-    public function send_unstructured_data(): Response
-    {
-        $data = [[
-            'fields' => [
-                $this->identifier => $this->host
-            ],
-            'messages' => $this->messages
-        ]];
-
-        return $this->client->post(url: config(key: 'logscale.ingest_unstructured_data'), data: $data);
-    }
-
-    public function send_structured_data(): Response
-    {
-        $data = [[
-            'tags' => [
-                $this->identifier => $this->host
-            ],
-            'events' => $this->events
-        ]];
-
-        return $this->client->post(url: config(key: 'logscale.ingest_structured_data'), data: $data);
     }
 
     public function ingest_json_data($data): Response
