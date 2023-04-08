@@ -17,6 +17,7 @@ class EndpointJobController extends Controller
     public function index(): View
     {
         $jobs = EndpointJob::query()
+            ->with(relations: ['interval', 'repository', 'endpoint'])
             ->where(column: 'user_id', operator: '=', value: auth()->id())
 //            ->orderBy('')
             ->get();
