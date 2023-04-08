@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EndpointJobDeleteRequest;
 use App\Http\Requests\EndpointJobStoreRequest;
 use App\Http\Requests\EndpointJobUpdateRequest;
 use App\Models\Endpoint;
@@ -107,8 +108,10 @@ class EndpointJobController extends Controller
         return to_route(route: 'endpoint-job.index')->banner('Job updated successfully');
     }
 
-    public function destroy(EndpointJob $endpointJob)
+    public function destroy(EndpointJobDeleteRequest $request, EndpointJob $endpointJob)
     {
-        //
+        $endpointJob->delete();
+
+        return to_route(route: 'endpoint-job.index')->banner('Job was deleted successfully.');
     }
 }
