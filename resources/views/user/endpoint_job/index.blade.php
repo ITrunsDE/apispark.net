@@ -82,7 +82,7 @@
                                 @empty
                                     <tr>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center"
-                                            colspan="4">
+                                            colspan="6">
                                             No Job found.
                                         </td>
                                     </tr>
