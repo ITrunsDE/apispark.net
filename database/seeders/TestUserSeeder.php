@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -25,14 +24,14 @@ class TestUserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'profile_photo_path' => null,
             'current_team_id' => null,
-            ]);
+        ]);
 
         // create test repository
         DB::table(table: 'repositories')->insert([
             'user_id' => 1,
             'name' => 'Repo_Test',
             'ingest_token' => 'b252f742-a20e-46cd-a15a-542205cab68c',
-            'active' => 1
+            'active' => 1,
         ]);
 
         // create test endppint
@@ -40,9 +39,8 @@ class TestUserSeeder extends Seeder
             'user_id' => 1,
             'name' => 'Endpoint_Test',
             'url' => 'https://httpbin.org/json',
-            'active' => 1
+            'active' => 1,
         ]);
-
 
     }
 }

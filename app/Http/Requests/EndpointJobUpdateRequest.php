@@ -18,7 +18,7 @@ class EndpointJobUpdateRequest extends FormRequest
             'endpoint_id' => 'required|exists:endpoints,id',
             'interval_id' => 'required|exists:intervals,id',
             'repository_id' => 'required|exists:repositories,id',
-            'active' => 'nullable|string'
+            'active' => 'nullable|string',
         ];
     }
 }

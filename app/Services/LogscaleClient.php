@@ -5,13 +5,11 @@ namespace App\Services;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use function Exception;
-use function PHPUnit\Framework\throwException;
 
 final class LogscaleClient extends HTTP
 {
-
     public array $messages = [];
+
     public string $identifier = 'host';
 
     public array $events = [];
@@ -19,13 +17,12 @@ final class LogscaleClient extends HTTP
     public function __construct(
         public readonly string $repository,
         public readonly string $ingest_token,
-        public string          $base_url,
+        public string $base_url,
         public readonly string $host
-    )
-    {
+    ) {
         // check if the base url is correct
-        if (!Str::startsWith(haystack: $this->base_url, needles: 'https://')) {
-            $this->base_url = 'https://' . $this->base_url;
+        if (! Str::startsWith(haystack: $this->base_url, needles: 'https://')) {
+            $this->base_url = 'https://'.$this->base_url;
         }
 
         // create a client with all the headers
@@ -41,24 +38,24 @@ final class LogscaleClient extends HTTP
         $data = [];
 
         // send all data
-        if(count($this->events) > 0) {
+        if (count($this->events) > 0) {
             // structured_data
             $data = [[
                 'tags' => [
-                    $this->identifier => $this->host
+                    $this->identifier => $this->host,
                 ],
-                'events' => $this->events
+                'events' => $this->events,
             ]];
 
             $url = config(key: 'logscale.ingest_structured_data');
             $send = true;
-        } elseif(count($this->messages) > 0) {
+        } elseif (count($this->messages) > 0) {
             // unstructured_data
             $data = [[
                 'fields' => [
-                    $this->identifier => $this->host
+                    $this->identifier => $this->host,
                 ],
-                'messages' => $this->messages
+                'messages' => $this->messages,
             ]];
 
             $url = config(key: 'logscale.ingest_unstructured_data');
@@ -66,16 +63,17 @@ final class LogscaleClient extends HTTP
         }
 
         // if we got data to send
-        if($send) {
+        if ($send) {
             $response = $this->client->post(url: $url, data: $data);
 
-            if($response->successful()) {
+            if ($response->successful()) {
                 return true;
             }
 
             // ToDo: handle exceptions for any error
             dd($response->body());
         }
+
         return true;
     }
 
@@ -95,7 +93,7 @@ final class LogscaleClient extends HTTP
     {
         $this->events[] = [
             'timestamp' => now(),
-            'attributes' => $messages
+            'attributes' => $messages,
         ];
     }
 
@@ -113,5 +111,4 @@ final class LogscaleClient extends HTTP
     {
         return $this->client->post(url: config(key: 'logscale.ingest_raw_json_data'), data: 'data');
     }
-
 }
