@@ -36,6 +36,7 @@ class EndpointJobController extends Controller
 
         $repositories = Repository::query()
             ->where(column: 'user_id', operator: '=', value: auth()->id())
+            ->active()
             ->orderBy(column: 'name')
             ->pluck(column: 'name', key: 'id');
 
@@ -78,6 +79,7 @@ class EndpointJobController extends Controller
 
         $repositories = Repository::query()
             ->where(column: 'user_id', operator: '=', value: auth()->id())
+            ->active()
             ->orderBy(column: 'name')
             ->pluck(column: 'name', key: 'id');
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Services\LogscaleClient;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -35,6 +36,12 @@ class Repository extends Model
     public function endpointJobs(): HasMany
     {
         return $this->hasMany(related: EndpointJob::class);
+    }
+
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where(column: 'active', operator: '=', value: 1)
+            ->whereNotNull(columns: 'verified_at');
     }
 
     public function send_verification(): bool
