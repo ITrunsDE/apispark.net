@@ -14,6 +14,7 @@ class RepositoryController extends Controller
     public function index(): View
     {
         $repositories = Repository::query()
+            ->with(relations: 'endpointJobs')
             ->where(column: 'user_id', operator: '=', value: auth()->id())
             ->orderBy(column: 'name')
             ->get();

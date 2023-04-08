@@ -38,7 +38,11 @@
                                             {{ $repository->name }}
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                            not implemented
+                                            @if($repository->endpointJobs->isNotEmpty())
+                                                {{ $repository->endpointJobs->map(function ($job) { return $job->name; })->implode(', ') }}
+                                            @else
+                                                <span class="italic text-red-400">unused</span>
+                                            @endif
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             not implemented
