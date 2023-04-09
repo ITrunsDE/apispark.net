@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Services;
@@ -13,12 +14,12 @@ use Illuminate\Support\Facades\Http;
 final class ApiClient
 {
     public array|Collection $jobs;
+
     private array $basic_headers;
 
     public function __construct(
         public readonly User $user
-    )
-    {
+    ) {
         $this->jobs = $this->user->endpointJobs->where('active', 1);
         $this->basic_headers = config(key: 'logscale.basic_headers');
     }
@@ -26,11 +27,11 @@ final class ApiClient
     public function collect(): bool
     {
         // check if job can run
-        foreach($this->jobs as $job) {
+        foreach ($this->jobs as $job) {
 
             // check if the last_run + interval is greater than now
             if (
-                !is_null($job->last_run) &&
+                ! is_null($job->last_run) &&
                 $job->last_run->addMinutes($job->interval->interval) > now()
             ) {
                 continue;
@@ -75,5 +76,4 @@ final class ApiClient
         // parse data and send
         $logscale_client->create_structured_event($data)->send();
     }
-
 }

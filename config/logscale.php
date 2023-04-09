@@ -12,5 +12,5 @@ return [
     'basic_headers' => [
         'User-Agent' => 'ApiSpark.net/1.0',
         'Host' => 'apiclient.apispark.net',
-    ]
+    ],
 ];

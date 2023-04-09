@@ -24,7 +24,7 @@ class RepositoryFactory extends Factory
             'ingest_token' => fake()->uuid(),
             'active' => fake()->boolean(),
             'verification_token' => fake()->uuid(),
-            'base_url' => 'https://' . fake()->randomElement(config('logscale.base_urls')),
+            'base_url' => 'https://'.fake()->randomElement(config('logscale.base_urls')),
         ];
     }
 }

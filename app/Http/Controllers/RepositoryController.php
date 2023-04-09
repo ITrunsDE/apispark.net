@@ -76,8 +76,8 @@ class RepositoryController extends Controller
 
         // if there is another ingest-token present
         // redirect to edit page with error message
-        if($check_ingest_token > 0) {
-            return to_route(route: 'repository.edit',parameters: $repository)->banner('Repository could not be updated. The ingest token is used by another repository.');
+        if ($check_ingest_token > 0) {
+            return to_route(route: 'repository.edit', parameters: $repository)->banner('Repository could not be updated. The ingest token is used by another repository.');
         }
 
         // update data

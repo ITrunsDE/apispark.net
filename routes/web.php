@@ -39,9 +39,15 @@ Route::middleware([
 
 });
 
-Route::get(uri: 'endpointjob-wizard', action: \App\Http\Livewire\JobWizard::class)->name('endpointjob-wizard');
+Route::middleware(['auth:sanctum'])->prefix('api/v1')->name('api:')->group(function () {
 
-Route::get('test', function() {
-    $api = new \App\Services\ApiClient(\App\Models\User::first());
-    $api->collect();
+    // Test
+    Route::get('test', function () {
+    return response(['data' => ['message' => 'ok']], 200);
+    })->name('test');
+
+    // GetEndpointJob
+    Route::get(uri: 'jobs', action: \App\Http\Controllers\API\Client\GetEndpointJobController::class)->name(name: 'get-endpoint-jobs');
 });
+
+Route::get(uri: 'endpointjob-wizard', action: \App\Http\Livewire\JobWizard::class)->name('endpointjob-wizard');

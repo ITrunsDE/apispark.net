@@ -87,17 +87,17 @@ class RepositoryTest extends TestCase
         $repository = Repository::factory()->create();
 
         $response = $this->actingAs($user)
-            ->patch('/repository/' . $repository->id, [
+            ->patch('/repository/'.$repository->id, [
                 'name' => 'Test Repository',
                 'ingest_token' => $repository->ingest_token,
-                'base_url' => $repository->base_url
+                'base_url' => $repository->base_url,
             ]);
 
         $response->assertRedirect();
 
         $this->assertDatabaseHas('repositories', [
             'id' => $repository->id,
-            'name' => 'Test Repository'
+            'name' => 'Test Repository',
         ]);
     }
 
@@ -110,7 +110,7 @@ class RepositoryTest extends TestCase
         $this->assertCount(1, Repository::all());
 
         $response = $this->actingAs($user)
-            ->delete('/repository/' . $repository->id);
+            ->delete('/repository/'.$repository->id);
 
         $response->assertRedirect();
 
@@ -148,8 +148,6 @@ class RepositoryTest extends TestCase
         $this->assertCount(1, Repository::all());
     }
 
-
-
     /** @test * */
     public function a_repository_can_be_verified()
     {
@@ -171,7 +169,7 @@ class RepositoryTest extends TestCase
         $this->assertNull($repository->verified_at);
 
         $response = $this->actingAs($user)
-            ->post('/repository/' . $repository->id . '/verify-verification-token', [
+            ->post('/repository/'.$repository->id.'/verify-verification-token', [
                 'verification_token' => $repository->verification_token,
             ]);
 
@@ -202,7 +200,7 @@ class RepositoryTest extends TestCase
         $this->assertNull($repository->verified_at);
 
         $response = $this->actingAs($user)
-            ->post('/repository/' . $repository->id . '/verify-verification-token', [
+            ->post('/repository/'.$repository->id.'/verify-verification-token', [
                 'verification_token' => '00000000-0000-0000-0000-000000000000',
             ]);
 
@@ -218,9 +216,7 @@ class RepositoryTest extends TestCase
         $this->withoutExceptionHandling();
 
         $user = User::factory()->create();
-        $this->assertCount(1, User
-            ::all());
-
+        $this->assertCount(1, User::all());
 
         Repository::create([
             'user_id' => 1,
@@ -235,8 +231,7 @@ class RepositoryTest extends TestCase
             'name' => 'Test Repository2',
             'ingest_token' => '11111111-1111-1111-1111-111111111111',
             'base_url' => 'https://cloud.community.humio.com',
-            'verification_token' => uuid_create()
-            ,
+            'verification_token' => uuid_create(),
         ]);
 
         $response = $this->actingAs($user)
@@ -254,6 +249,4 @@ class RepositoryTest extends TestCase
 
         $this->assertNotEquals($repo_check1->ingest_token, $repo_check2->ingest_token);
     }
-
-
 }
