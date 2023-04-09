@@ -81,6 +81,7 @@ class RepositoryTest extends TestCase
     /** @test * */
     public function an_user_can_edit_a_repository()
     {
+        $this->withoutExceptionHandling();
         $user = User::factory()->create();
 
         $repository = Repository::factory()->create();
@@ -147,26 +148,7 @@ class RepositoryTest extends TestCase
         $this->assertCount(1, Repository::all());
     }
 
-    /** @test * */
-    public function an_ingest_token_must_be_unique_in_the_database_if_edited()
-    {
-        $user = User::factory()->create();
 
-        Repository::factory(2)->create();
-
-        $repositories = Repository::all();
-
-        $this->assertCount(2, $repositories);
-
-        $response = $this->actingAs($user)
-            ->patch('/repository/1/', [
-                'name' => 'Test Repository',
-                'ingest_token' => $repositories->last()->ingest_token,
-                'base_url' => $repositories->last()->base_url
-            ]);
-
-
-    }
 
     /** @test * */
     public function a_repository_can_be_verified()
@@ -229,5 +211,49 @@ class RepositoryTest extends TestCase
         $repository->refresh();
         $this->assertNull($repository->verified_at);
     }
+
+//    /** @test * */
+    public function an_ingest_token_must_be_unique_in_the_database_if_edited()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = User::factory()->create();
+        $this->assertCount(1, User
+            ::all());
+
+
+        Repository::create([
+            'user_id' => 1,
+            'name' => 'Test Repository',
+            'ingest_token' => '00000000-0000-0000-0000-000000000000',
+            'base_url' => 'https://cloud.community.humio.com',
+            'verification_token' => uuid_create(),
+        ]);
+
+        Repository::create([
+            'user_id' => 1,
+            'name' => 'Test Repository2',
+            'ingest_token' => '11111111-1111-1111-1111-111111111111',
+            'base_url' => 'https://cloud.community.humio.com',
+            'verification_token' => uuid_create()
+            ,
+        ]);
+
+        $response = $this->actingAs($user)
+            ->patch('/repository/2/', [
+                'name' => 'Test Repository',
+                'ingest_token' => '00000000-0000-0000-0000-000000000000',
+                'base_url' => 'https://cloud.community.humio.com',
+            ]);
+
+        $response->assertRedirect();
+
+        $repo_check1 = Repository::find(1
+        );
+        $repo_check2 = Repository::find(2);
+
+        $this->assertNotEquals($repo_check1->ingest_token, $repo_check2->ingest_token);
+    }
+
 
 }

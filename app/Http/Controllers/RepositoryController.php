@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RepositoryDeleteRequest;
 use App\Http\Requests\RepositoryStoreRequest;
+use App\Http\Requests\RepositoryUpdateRequest;
 use App\Http\Requests\RepositoryVerifyRequest;
 use App\Models\Repository;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class RepositoryController extends Controller
 {
@@ -64,18 +62,25 @@ class RepositoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Repository $repository)
+    public function update(RepositoryUpdateRequest $request, Repository $repository)
     {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'ingest_token' => [
-                'required',
-                'uuid',
-                Rule::unique('repositories')->ignore($repository),
-            ],
-            'base_url' => 'required|url',
-        ]);
+        $data = $request->validated();
 
+        // check if there is already a ingest-token with the same id
+        $check_ingest_token = Repository::query()
+            ->where(column: 'ingest_token', operator: '=', value: $data['ingest_token'])
+            ->where(column: 'id', operator: '!=', value: $repository->id)
+            ->count();
+
+//        dd($check_ingest_token);
+
+        // if there is another ingest-token present
+        // redirect to edit page with error message
+        if($check_ingest_token > 0) {
+            return to_route(route: 'repository.edit',parameters: $repository)->banner('Repository could not be updated. The ingest token is used by another repository.');
+        }
+
+        // update data
         $repository->update($data);
 
         return to_route(route: 'repository.index')->banner('Repository was updated successfully.');
