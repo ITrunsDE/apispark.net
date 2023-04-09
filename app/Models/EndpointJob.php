@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -43,5 +44,10 @@ class EndpointJob extends Model
     public function endpoint(): BelongsTo
     {
         return $this->belongsTo(related: Endpoint::class);
+    }
+
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where(column: 'active', operator: '=', value: 1);
     }
 }
