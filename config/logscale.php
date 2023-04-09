@@ -9,4 +9,8 @@ return [
         'cloud.community.humio.com',
         'cloud.humio.com',
     ],
+    'basic_headers' => [
+        'User-Agent' => 'ApiSpark.net/1.0',
+        'Host' => 'apiclient.apispark.net',
+    ]
 ];
