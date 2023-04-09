@@ -40,3 +40,8 @@ Route::middleware([
 });
 
 Route::get(uri: 'endpointjob-wizard', action: \App\Http\Livewire\JobWizard::class)->name('endpointjob-wizard');
+
+Route::get('test', function() {
+    $api = new \App\Services\ApiClient(\App\Models\User::first());
+    $api->collect();
+});
