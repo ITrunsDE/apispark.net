@@ -14,8 +14,9 @@ class EndpointJobResource extends JsonResource
             'name' => $this->name,
             'active' => $this->active,
             'endpoint' => EndpointResource::make($this->endpoint),
-            'interval' => IntervalResource::make($this->interval),
+            'interval' => IntervalResource::make($this->interval)->interval,
             'last_run' => $this->last_run,
+            'next_run' => $this->last_run->addMinutes($this->interval->interval),
         ];
     }
 }
