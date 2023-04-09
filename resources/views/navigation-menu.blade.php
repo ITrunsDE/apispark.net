@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-sky-500" aria-label="Global">
+<nav x-data="{ isOpen: false }" class="bg-sky-500" aria-label="Global">
     <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
         <div class="flex h-16 justify-between">
             <div class="flex items-center px-2 lg:px-0">
@@ -16,22 +16,22 @@
 
                 </div>
             </div>
-            <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
-                <div class="w-full max-w-lg lg:max-w-xs">
-                    <label for="search" class="sr-only">Search</label>
-                    <div class="relative text-white focus-within:text-gray-400">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <input id="search" name="search" class="block w-full rounded-md border-0 bg-sky-400 py-1.5 pl-10 pr-3 text-white placeholder:text-white focus:bg-white focus:text-gray-900 focus:ring-0 focus:placeholder:text-gray-400 sm:text-sm sm:leading-6" placeholder="Search" type="search">
-                    </div>
-                </div>
-            </div>
+{{--            <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">--}}
+{{--                <div class="w-full max-w-lg lg:max-w-xs">--}}
+{{--                    <label for="search" class="sr-only">Search</label>--}}
+{{--                    <div class="relative text-white focus-within:text-gray-400">--}}
+{{--                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">--}}
+{{--                            <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">--}}
+{{--                                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />--}}
+{{--                            </svg>--}}
+{{--                        </div>--}}
+{{--                        <input id="search" name="search" class="block w-full rounded-md border-0 bg-sky-400 py-1.5 pl-10 pr-3 text-white placeholder:text-white focus:bg-white focus:text-gray-900 focus:ring-0 focus:placeholder:text-gray-400 sm:text-sm sm:leading-6" placeholder="Search" type="search">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="flex items-center lg:hidden">
                 <!-- Mobile menu button -->
-                <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-sky-200 hover:bg-sky-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <button @click="isOpen = !isOpen" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-sky-200 hover:bg-sky-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open menu</span>
                     <!--
                       Icon when menu is closed.
@@ -62,29 +62,31 @@
                 <!-- Profile dropdown -->
                 <div class="relative ml-4 flex-shrink-0">
                     <div>
-                        <button type="button" class="flex rounded-full bg-sky-500 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sky-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <button @click="isOpen = !isOpen" type="button" class="flex rounded-full bg-sky-500 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sky-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                             <span class="sr-only">Open user menu</span>
                             <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                         </button>
                     </div>
-
-                    <!--
-                      Dropdown menu, show/hide based on menu state.
-
-                      Entering: "transition ease-out duration-100"
-                        From: "transform opacity-0 scale-95"
-                        To: "transform opacity-100 scale-100"
-                      Leaving: "transition ease-in duration-75"
-                        From: "transform opacity-100 scale-100"
-                        To: "transform opacity-0 scale-95"
-                    -->
-                    <div class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                    <div
+                        x-show="isOpen"
+                        x-cloak
+                        x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75 "
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95"
+                        class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                        <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
 
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                        <a href="{{ route('api-tokens.index') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">API-Settings</a>
 
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+                            <button type="submit" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -96,11 +98,11 @@
         <div class="space-y-1 px-2 pb-3 pt-2">
             <a href="{{ route('dashboard') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Dashboard</a>
 
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Jobs</a>
+            <a href="{{ route('endpoint-job.index') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Jobs</a>
 
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Applicants</a>
+            <a href="{{ route('endpoint.index') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Endpoints</a>
 
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Company</a>
+            <a href="{{ route('repository.index') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-sky-400 hover:text-white">Repositories</a>
         </div>
         <div class="border-t border-sky-500 pb-3 pt-4">
             <div class="flex items-center px-4">
@@ -108,8 +110,8 @@
                     <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 </div>
                 <div class="ml-3">
-                    <div class="text-base font-medium text-white">Floyd Miles</div>
-                    <div class="text-sm font-medium text-sky-200">floyd.miles@example.com</div>
+                    <div class="text-base font-medium text-white">{{ auth()->user()->name }}</div>
+                    <div class="text-sm font-medium text-sky-200">{{ auth()->user()->email }}</div>
                 </div>
                 <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-sky-500 p-1 text-sky-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sky-500">
                     <span class="sr-only">View notifications</span>
@@ -119,11 +121,14 @@
                 </button>
             </div>
             <div class="mt-3 px-2">
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-sky-200 hover:bg-sky-400 hover:text-white">Your Profile</a>
+                <a href="{{ route('profile.show') }}" class="block rounded-md px-3 py-2 text-base font-medium text-sky-200 hover:bg-sky-400 hover:text-white">Your Profile</a>
 
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-sky-200 hover:bg-sky-400 hover:text-white">Settings</a>
+                <a href="{{ route('api-tokens.index') }}" class="block rounded-md px-3 py-2 text-base font-medium text-sky-200 hover:bg-sky-400 hover:text-white">API-Settings</a>
 
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-sky-200 hover:bg-sky-400 hover:text-white">Sign out</a>
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+                    <button type="submit" class="block rounded-md px-3 py-2 text-base font-medium text-sky-200 hover:bg-sky-400 hover:text-white">Sign out</button>
+                </form>
             </div>
         </div>
     </div>
