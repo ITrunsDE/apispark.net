@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -57,4 +58,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function endpoints(): HasMany
+    {
+        return $this->hasMany(related: Endpoint::class);
+    }
+
+    public function endpointJobs(): HasMany
+    {
+        return $this->hasMany(related: EndpointJob::class);
+    }
+
+    public function repositories(): HasMany
+    {
+        return $this->hasMany(related: Repository::class);
+    }
 }
