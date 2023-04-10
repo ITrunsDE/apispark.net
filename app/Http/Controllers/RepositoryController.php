@@ -59,9 +59,6 @@ class RepositoryController extends Controller
         );
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(RepositoryUpdateRequest $request, Repository $repository)
     {
         $data = $request->validated();
@@ -72,12 +69,15 @@ class RepositoryController extends Controller
             ->where(column: 'id', operator: '!=', value: $repository->id)
             ->count();
 
-//        dd($check_ingest_token);
-
         // if there is another ingest-token present
         // redirect to edit page with error message
         if ($check_ingest_token > 0) {
             return to_route(route: 'repository.edit', parameters: $repository)->banner('Repository could not be updated. The ingest token is used by another repository.');
+        }
+
+        // if the ingest_token get changed, then force new validation
+        if($data['ingest_token'] !== $repository->ingest_token) {
+            $data['verified_at'] = null;
         }
 
         // update data
