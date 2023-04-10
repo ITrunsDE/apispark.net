@@ -2,7 +2,6 @@
 
 namespace App\Console;
 
-use App\Services\LogscaleClient;
 use App\Services\QueueEndpointJobForUser;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

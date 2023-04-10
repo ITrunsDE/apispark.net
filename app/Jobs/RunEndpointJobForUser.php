@@ -16,8 +16,7 @@ class RunEndpointJobForUser implements ShouldQueue
 
     public function __construct(
         public User $user,
-    )
-    {
+    ) {
     }
 
     public function handle(): void
