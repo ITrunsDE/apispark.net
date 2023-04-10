@@ -48,7 +48,7 @@
                                 <tbody class="divide-y divide-gray-200 bg-white">
                                 @forelse($jobs as $job)
                                     <tr>
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                                        <td class="whitespace-nowrap py-4 pl-4text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
                                             @if($job->active)
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
@@ -59,7 +59,7 @@
                                                 </svg>
                                             @endif
                                         </td>
-                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900 font-medium">
                                             <a href="{{ route('endpoint-job.edit', $job) }}">
                                                     {{ $job->name }}
                                             </a>

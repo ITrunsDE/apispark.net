@@ -10,10 +10,13 @@
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-base font-semibold leading-6 text-gray-900">Endpoints</h1>
-                        <p class="mt-2 text-sm text-gray-700">A list of all the endpoints in your account and the latest use.</p>
+                        <p class="mt-2 text-sm text-gray-700">A list of all the endpoints in your account and the latest
+                            use.</p>
                     </div>
                     <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                        <a href=" {{ route('endpoint.create') }}" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Endpoint</a>
+                        <a href=" {{ route('endpoint.create') }}"
+                           class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add
+                            Endpoint</a>
                     </div>
                 </div>
                 <div class="mt-8 flow-root">
@@ -22,10 +25,17 @@
                             <table class="min-w-full divide-y divide-gray-300">
                                 <thead>
                                 <tr>
-                                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:pl-8">Name</th>
-                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Used in</th>
-                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Last call</th>
-{{--                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>--}}
+                                    <th scope="col"
+                                        class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:pl-8">
+                                        Name
+                                    </th>
+                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                        Used in
+                                    </th>
+                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                        Last call
+                                    </th>
+                                    {{--                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>--}}
                                     <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 lg:pr-8">
                                         <span class="sr-only">Edit</span>
                                     </th>
@@ -35,7 +45,9 @@
                                 @forelse($endpoints as $endpoint)
                                     <tr>
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                            {{ $endpoint->name }}
+                                            <a href="{{ route('endpoint.edit', $endpoint) }}">
+                                                {{ $endpoint->name }}
+                                            </a>
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
 
@@ -51,13 +63,15 @@
                                         </td>
                                         {{--                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Member</td>--}}
                                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 lg:pr-8">
-                                            <a href="{{ route('endpoint.edit', $endpoint) }}" class="text-indigo-600 hover:text-indigo-900">Edit<span
+                                            <a href="{{ route('endpoint.edit', $endpoint) }}"
+                                               class="text-indigo-600 hover:text-indigo-900">Edit<span
                                                     class="sr-only">, {{ $endpoint->name }}</span></a>
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center" colspan="4">
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center"
+                                            colspan="4">
                                             No endpoint found.
                                         </td>
                                     </tr>

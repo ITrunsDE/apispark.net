@@ -47,7 +47,9 @@
                                 @forelse($repositories as $repository)
                                     <tr>
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                            {{ $repository->name }}
+                                            <a href="{{ route('repository.edit', $repository) }}">
+                                                {{ $repository->name }}
+                                            </a>
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             @if($repository->endpointJobs->isNotEmpty())
@@ -61,11 +63,14 @@
                                         </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             @if(is_null($repository->verified_at))
-                                                <span class="inline-flex items-center rounded bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-800">not verified</span>
+                                                <span
+                                                    class="inline-flex items-center rounded bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-800">not verified</span>
                                             @elseif($repository->active === 1)
-                                                <span class="inline-flex items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">inactive</span>
+                                                <span
+                                                    class="inline-flex items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">inactive</span>
                                             @else
-                                                <span class="inline-flex items-center rounded bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">active</span>
+                                                <span
+                                                    class="inline-flex items-center rounded bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">active</span>
                                             @endif
                                         </td>
                                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 lg:pr-8">
