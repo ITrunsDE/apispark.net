@@ -64,7 +64,11 @@
                     <div>
                         <button @click="isOpen = !isOpen" type="button" class="flex rounded-full bg-sky-500 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sky-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                             <span class="sr-only">Open user menu</span>
-                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-500">
+                                <span class="text-sm font-medium leading-none text-white">
+                                    {{ ucfirst(Str::substr(auth()->user()->name,0,1)) }}
+                                </span>
+                            </span>
                         </button>
                     </div>
                     <div
@@ -107,7 +111,11 @@
         <div class="border-t border-sky-500 pb-3 pt-4">
             <div class="flex items-center px-4">
                 <div class="flex-shrink-0">
-                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-500">
+                        <span class="text-sm font-medium leading-none text-white">
+                            {{ ucfirst(Str::substr(auth()->user()->name,0,1)) }}
+                        </span>
+                    </span>
                 </div>
                 <div class="ml-3">
                     <div class="text-base font-medium text-white">{{ auth()->user()->name }}</div>
