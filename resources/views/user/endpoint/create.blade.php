@@ -1,8 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Endpoint - Create') }}
-        </h2>
+        <x-breadcrumb-entry :href="route('endpoint.index')">Endpoints</x-breadcrumb-entry>
+        <x-breadcrumb-entry>Add endpoint</x-breadcrumb-entry>
     </x-slot>
 
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-6">

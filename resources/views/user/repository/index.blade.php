@@ -1,6 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        Repository
+        <x-breadcrumb-entry>Repository</x-breadcrumb-entry>
+{{--        <x-breadcrumb-entry>Edit endpoint</x-breadcrumb-entry>--}}
     </x-slot>
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-6">
 

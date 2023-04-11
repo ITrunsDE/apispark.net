@@ -1,6 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        Endpoints
+        <x-breadcrumb-entry>Endpoints</x-breadcrumb-entry>
+{{--        <x-breadcrumb-entry>Add job</x-breadcrumb-entry>--}}
     </x-slot>
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-6">
 

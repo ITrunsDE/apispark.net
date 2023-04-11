@@ -1,7 +1,10 @@
 <x-app-layout>
+
     <x-slot name="header">
-        Jobs
+        <x-breadcrumb-entry>Jobs</x-breadcrumb-entry>
+{{--        <x-breadcrumb-entry>Overview</x-breadcrumb-entry>--}}
     </x-slot>
+
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-6">
 
         <x-basic-card>
@@ -49,7 +52,7 @@
                                 @forelse($jobs as $job)
                                     <tr>
                                         <td class="whitespace-nowrap py-4 pl-4text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                            @if($job->active)
+                                            @if($job->active && $job->repository->verified_at && $job->repository->active)
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
                                                 </svg>

@@ -1,8 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Job - Create') }}
-        </h2>
+        <x-breadcrumb-entry :href="route('endpoint-job.index')">Jobs</x-breadcrumb-entry>
+        <x-breadcrumb-entry>Add job</x-breadcrumb-entry>
     </x-slot>
 
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-6">
@@ -75,8 +74,9 @@
                                 </div>
 
                                 <div class="sm:col-span-2">
-                                    <label for="repository_id" class="block text-sm font-medium leading-6 text-gray-900">
-                                        ... and send it to  ...
+                                    <label for="repository_id"
+                                           class="block text-sm font-medium leading-6 text-gray-900">
+                                        ... and send it to ...
                                     </label>
                                     <div class="mt-2">
                                         <select id="repository_id" name="repository_id" autocomplete="repository_id"
@@ -94,7 +94,8 @@
                     </div>
 
                     <div class="mt-6 flex items-center justify-end gap-x-6">
-                        <a href="{{ route('endpoint-job.index') }}" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
+                        <a href="{{ route('endpoint-job.index') }}"
+                           class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
                         <button type="submit"
                                 class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                             Save

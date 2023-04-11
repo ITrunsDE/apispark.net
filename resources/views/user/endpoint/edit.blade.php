@@ -1,8 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Endpoint - Create') }}
-        </h2>
+        <x-breadcrumb-entry :href="route('endpoint.index')">Endpoints</x-breadcrumb-entry>
+        <x-breadcrumb-entry>Edit endpoint</x-breadcrumb-entry>
     </x-slot>
 
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-6">
@@ -42,13 +41,15 @@
                                            class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                     <div class="mt-2">
                                         <input type="text" name="name" id="name" autocomplete="repository-name"
-                                               value="{{ $endpoint->name }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                               value="{{ $endpoint->name }}"
+                                               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
 
                                 <div class="sm:col-span-4">
                                     <label for="url"
-                                           class="block text-sm font-medium leading-6 text-gray-900">API endpoint url</label>
+                                           class="block text-sm font-medium leading-6 text-gray-900">API endpoint
+                                        url</label>
                                     <div class="mt-2">
                                         <input type="text" name="url" id="url"
                                                autocomplete="url"
