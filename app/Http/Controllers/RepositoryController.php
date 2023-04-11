@@ -76,7 +76,7 @@ class RepositoryController extends Controller
         }
 
         // if the ingest_token get changed, then force new validation
-        if($data['ingest_token'] !== $repository->ingest_token) {
+        if ($data['ingest_token'] !== $repository->ingest_token) {
             $data['verified_at'] = null;
         }
 
