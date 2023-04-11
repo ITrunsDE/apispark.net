@@ -11,7 +11,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // run EndpointJobs
-        $schedule->call(callback: QueueEndpointJobForUser::class)->everyMinute();
+        $schedule->call(callback: new QueueEndpointJobForUser::class)->everyMinute();
 
         // run queue worker
         $schedule->command(command: 'queue:work --stop-when-empty')
