@@ -22,9 +22,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+
+    // Dashboard
+    Route::get(uri: 'dashboard', action: \App\Http\Controllers\DashboardController::class)->name(name: 'dashboard');
 
     // Repository
     Route::resource(name: 'repository', controller: \App\Http\Controllers\RepositoryController::class);
