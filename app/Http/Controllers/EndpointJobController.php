@@ -9,6 +9,7 @@ use App\Models\Endpoint;
 use App\Models\EndpointJob;
 use App\Models\Interval;
 use App\Models\Repository;
+use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -63,7 +64,13 @@ class EndpointJobController extends Controller
 
         EndpointJob::create($data);
 
-        return to_route(route: 'endpoint-job.index')->banner('Job created successfully');
+        Notification::make()
+            ->title('Job was created successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint-job.index');
     }
 
     public function show(EndpointJob $endpointJob)
@@ -105,13 +112,25 @@ class EndpointJobController extends Controller
         $data['active'] = $data['active'] === 'true' ? 1 : 0;
         $endpointJob->update($data);
 
-        return to_route(route: 'endpoint-job.index')->banner('Job updated successfully');
+        Notification::make()
+            ->title('Job was updated successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint-job.index');
     }
 
     public function destroy(EndpointJobDeleteRequest $request, EndpointJob $endpointJob)
     {
         $endpointJob->delete();
 
-        return to_route(route: 'endpoint-job.index')->banner('Job was deleted successfully.');
+        Notification::make()
+            ->title('Job was deleted successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint-job.index');
     }
 }

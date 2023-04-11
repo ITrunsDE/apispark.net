@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EndpointStoreRequest;
 use App\Http\Requests\EndpointUpdateRequest;
 use App\Models\Endpoint;
+use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -39,7 +40,13 @@ class EndpointController extends Controller
 
         Endpoint::create($data);
 
-        return to_route(route: 'endpoint.index')->banner('Endpoint was created successfully.');
+        Notification::make()
+            ->title('Endpoint was created successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint.index');
     }
 
     public function show(Endpoint $endpoint)
@@ -60,13 +67,25 @@ class EndpointController extends Controller
         $data = $request->validated();
         $endpoint->update($data);
 
-        return to_route(route: 'endpoint.index')->banner('Endpoint was updated successfully.');
+        Notification::make()
+            ->title('Endpoint was updated successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint.index');
     }
 
     public function destroy(Endpoint $endpoint)
     {
         $endpoint->delete();
 
-        return to_route(route: 'endpoint.index')->banner('Endpoint was deleted successfully.');
+        Notification::make()
+            ->title('Endpoint was deleted successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint.index');
     }
 }
