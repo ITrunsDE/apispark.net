@@ -6,7 +6,6 @@ use App\Models\Endpoint;
 use App\Models\EndpointJob;
 use App\Models\Repository;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
