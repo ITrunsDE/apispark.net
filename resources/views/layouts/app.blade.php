@@ -24,14 +24,13 @@
     </style>
 </head>
 <body class="font-sans antialiased">
-<x-banner/>
+{{--<x-banner/>--}}
 
 <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
     @livewire('navigation-menu')
 
     <!-- Page Heading -->
     @if (isset($header))
-        <!-- ToDo: Create breadcrumbs automatically -->
 
         <!-- Breadcrumb -->
         <nav class="hidden border-b border-gray-200 bg-white lg:flex" aria-label="Breadcrumb">
@@ -52,6 +51,7 @@
                     </div>
                 </li>
 
+                <!-- other breadcrumbs-->
                 {{ $header }}
 
             </ol>
