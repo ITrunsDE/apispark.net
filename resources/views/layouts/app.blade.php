@@ -16,6 +16,7 @@
 
     <!-- Styles -->
     @livewireStyles
+    @stack('scripts')
 
     <style>
         [x-cloak] {
@@ -67,6 +68,7 @@
 
 @stack('modals')
 
+@livewire('notifications')
 @livewireScripts
 </body>
 </html>

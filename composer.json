@@ -11,7 +11,8 @@
         "laravel/jetstream": "^3.1",
         "laravel/sanctum": "^3.2.1",
         "laravel/tinker": "^2.8.1",
-        "livewire/livewire": "^2.12.3"
+        "livewire/livewire": "^2.12.3",
+        "filament/notifications": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8.1",
@@ -41,7 +42,8 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan filament:upgrade"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
