@@ -3,7 +3,7 @@
         <div class="flex h-16 justify-between">
             <div class="flex items-center px-2 lg:px-0">
                 <div class="flex flex-shrink-0 items-center">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">
+                    <img class="h-8 w-auto" src="/image/apispark_logo_white.svg" alt="Apispark.net">
                 </div>
                 <div class="hidden lg:ml-8 lg:flex lg:space-x-4">
                     <a href="{{ route('dashboard') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Dashboard</a>
