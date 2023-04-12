@@ -7,12 +7,12 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.5",
-        "laravel/framework": "^10.6.2",
-        "laravel/jetstream": "^3.1",
+        "laravel/framework": "^10.7.1",
+        "laravel/jetstream": "^3.1.1",
         "laravel/sanctum": "^3.2.1",
         "laravel/tinker": "^2.8.1",
         "livewire/livewire": "^2.12.3",
-        "filament/notifications": "^2.0"
+        "filament/notifications": "^2.17.24"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8.1",
@@ -22,7 +22,7 @@
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^7.4",
         "phpunit/phpunit": "^10.0.19",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.1"
     },
     "autoload": {
         "psr-4": {
