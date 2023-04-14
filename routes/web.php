@@ -43,6 +43,7 @@ Route::middleware([
     Route::middleware(['role:Super-Admin'])->prefix('admin')->name('admin.')->group(function () {
 
         Route::resource(name: 'user', controller: \App\Http\Controllers\Admin\AdminUserController::class);
+        Route::resource(name: 'role', controller: \App\Http\Controllers\Admin\AdminRoleController::class);
 
     });
 
