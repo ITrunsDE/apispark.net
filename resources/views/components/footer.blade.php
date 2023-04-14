@@ -7,19 +7,25 @@
                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Dashboard</a>
                 </div>
 
+                @can('use_jobs')
                 <div class="pb-6">
                     <a href="{{ route('endpoint-job.index') }}"
                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
                 </div>
+                @endcan
 
+                @can('use_endpoint')
                 <div class="pb-6">
                     <a href="{{ route('endpoint.index') }}" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Endpoints</a>
                 </div>
+                @endcan
 
+                @can('use_repository')
                 <div class="pb-6">
                     <a href="{{ route('repository.index') }}"
                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Repositories</a>
                 </div>
+                @endcan
 
                 <div class="pb-6">
                     <a href="{{ route('profile.show') }}"

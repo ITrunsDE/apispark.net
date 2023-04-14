@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
 
     protected $fillable = [
         'name',
@@ -53,5 +55,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function repositories(): HasMany
     {
         return $this->hasMany(related: Repository::class);
+    }
+
+    public function maxJobs(): int
+    {
+        return (int) $this->roles()->first()->max_jobs ?? 2;
     }
 }

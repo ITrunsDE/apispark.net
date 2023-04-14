@@ -40,6 +40,13 @@ Route::middleware([
     // EndpointJob
     Route::resource(name: 'endpoint-job', controller: EndpointJobController::class);
 
+    // Admin Functions
+    Route::middleware(['role:Super-Admin'])->prefix('admin')->name('admin.')->group(function () {
+
+        Route::resource(name: 'user', controller: \App\Http\Controllers\Admin\AdminUserController::class);
+
+    });
+
 });
 
 //Route::middleware(['auth:sanctum'])->prefix('api/v1')->name('api:')->group(function () {

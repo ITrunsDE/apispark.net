@@ -17,6 +17,8 @@ class EndpointJobController extends Controller
 {
     public function index(): View
     {
+        $max_jobs = auth()->user()->maxJobs();
+
         $jobs = EndpointJob::query()
             ->with(relations: ['interval', 'repository', 'endpoint'])
             ->where(column: 'user_id', operator: '=', value: auth()->id())
@@ -25,7 +27,7 @@ class EndpointJobController extends Controller
 
         return view(
             view: 'user.endpoint_job.index',
-            data: compact('jobs')
+            data: compact('jobs', 'max_jobs')
         );
     }
 
@@ -46,18 +48,31 @@ class EndpointJobController extends Controller
             ->orderBy(column: 'interval')
             ->pluck(column: 'name', key: 'id');
 
+        $can_not_create_jobs = auth()->user()->maxJobs() >= auth()->user()->endpointJobs()->count();
+
         return view(
             view: 'user.endpoint_job.create',
             data: compact(
                 'endpoints',
                 'repositories',
                 'intervals',
+                'can_not_create_jobs'
             )
         );
     }
 
     public function store(EndpointJobStoreRequest $request): RedirectResponse
     {
+        if (auth()->user()->maxJobs() <= EndpointJob::where(column: 'user_id', operator: '=', value: auth()->id())->count()) {
+            Notification::make()
+                ->title('Job can not be created. Max licensed jobs reached.')
+                ->warning()
+                ->duration(5000)
+                ->send();
+
+            return to_route(route: 'endpoint-job.index');
+        }
+
         $data = $request->validated();
         $data['user_id'] = auth()->id();
         $data['active'] = true;
@@ -121,7 +136,7 @@ class EndpointJobController extends Controller
         return to_route(route: 'endpoint-job.index');
     }
 
-    public function destroy(EndpointJobDeleteRequest $request, EndpointJob $endpointJob)
+    public function destroy(EndpointJobDeleteRequest $request, EndpointJob $endpointJob): RedirectResponse
     {
         $endpointJob->delete();
 
