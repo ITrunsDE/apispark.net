@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\API\Client\GetEndpointJobController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EndpointController;
 use App\Http\Controllers\EndpointJobController;

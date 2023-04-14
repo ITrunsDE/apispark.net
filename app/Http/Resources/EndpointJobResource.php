@@ -17,7 +17,7 @@ class EndpointJobResource extends JsonResource
             'interval' => IntervalResource::make($this->interval)->interval,
             'last_run' => $this->last_run,
             'next_run' => $this->last_run->addMinutes($this->interval->interval),
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
         ];
     }
 }
