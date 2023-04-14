@@ -174,7 +174,7 @@
                                 <tr>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center"
                                         colspan="4">
-                                        No user found.
+                                        No jobs found.
                                     </td>
                                 </tr>
                             @endforelse
@@ -245,7 +245,7 @@
                                 <tr>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center"
                                         colspan="4">
-                                        No user found.
+                                        No endpoints found.
                                     </td>
                                 </tr>
                             @endforelse
@@ -353,7 +353,7 @@
                                 <tr>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center"
                                         colspan="4">
-                                        No user found.
+                                        No repositories found.
                                     </td>
                                 </tr>
                             @endforelse
