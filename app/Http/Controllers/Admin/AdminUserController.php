@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminUserUpdateRequest;
 use App\Models\User;
+use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
@@ -24,7 +27,7 @@ class AdminUserController extends Controller
 
     public function edit(User $user): View
     {
-        $user->load(relations: ['endpoints','endpointJobs', 'repositories']);
+        $user->load(relations: ['endpoints', 'endpointJobs', 'repositories']);
 
         return view(
             view: 'admin.user.edit',
@@ -32,17 +35,24 @@ class AdminUserController extends Controller
         );
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
+    public function update(AdminUserUpdateRequest $request, User $user): RedirectResponse
     {
-        //
+        $data = $request->validated();
+
+        // sync role for the user
+        $user->syncRoles($data['role']);
+
+        $user->update($data);
+
+        Notification::make()
+            ->title('User was edited successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'admin.user.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(User $user)
     {
         //

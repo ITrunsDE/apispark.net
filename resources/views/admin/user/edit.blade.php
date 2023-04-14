@@ -48,6 +48,21 @@
                                 </div>
 
                                 <div class="sm:col-span-2">
+                                    <label for="base_url" class="block text-sm font-medium leading-6 text-gray-900">
+                                        Role
+                                    </label>
+                                    <div class="mt-2">
+                                        <select id="role" name="role" autocomplete="role"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                            @foreach(\Spatie\Permission\Models\Role::orderBy('name')->get() as $role)
+                                                <option
+                                                    @selected($user->hasRole($role)) value="{{ $role->name }}">{{ ucfirst($role->name) }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-2">
                                     <label for="email"
                                            class="block text-sm font-medium leading-6 text-gray-900">
                                         Email
@@ -61,14 +76,14 @@
                                 </div>
 
                                 <div class="sm:col-span-1">
-                                    <label for="verified_at"
+                                    <label for="email_verified_at"
                                            class="block text-sm font-medium leading-6 text-gray-900">
                                         Verified at
                                     </label>
                                     <div class="mt-2">
-                                        <input type="text" name="verified_at" id="verified_at"
-                                               autocomplete="verified_at"
-                                               value="{{ $user->verified_at }}"
+                                        <input type="text" name="email_verified_at" id="email_verified_at"
+                                               autocomplete="email_verified_at"
+                                               value="{{ $user->email_verified_at }}"
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>

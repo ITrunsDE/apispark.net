@@ -31,6 +31,10 @@
                                         class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:pl-8">
                                         Name
                                     </th>
+                                    <th scope="col"
+                                        class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                        Role
+                                    </th>
                                     <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                         Email
                                     </th>
@@ -54,8 +58,13 @@
                                                 {{ $user->name }}
                                             </a>
                                         </td>
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                            @foreach ($user->getRoleNames() as $role)
+                                                {{ ucfirst($role) }}
+                                            @endforeach
+                                        </td>
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 flex">
-                                            @if($user->verified_at)
+                                            @if($user->email_verified_at)
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                      fill="currentColor" class="w-5 h-5 text-green-600 mr-2">
                                                     <path fill-rule="evenodd"

@@ -35,16 +35,14 @@ Route::middleware([
     // EndpointJob
     Route::resource(name: 'endpoint-job', controller: \App\Http\Controllers\EndpointJobController::class);
 
-    // ToDo: add gate check for only administrators
     // Admin Functions
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware(['role:Super-Admin'])->prefix('admin')->name('admin.')->group(function () {
 
         Route::resource(name: 'user', controller: \App\Http\Controllers\Admin\AdminUserController::class);
 
     });
 
 });
-
 
 //Route::middleware(['auth:sanctum'])->prefix('api/v1')->name('api:')->group(function () {
 //
