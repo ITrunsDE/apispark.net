@@ -24,7 +24,7 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased h-full">
+<body class="font-sans antialiased h-full bg-gray-100 dark:bg-gray-900">
 {{--<x-banner/>--}}
 
 <div class="min-h-full bg-gray-100 dark:bg-gray-900">
@@ -34,13 +34,13 @@
     @if (isset($header))
 
         <!-- Breadcrumb -->
-        <nav class="hidden border-b border-gray-200 bg-white lg:flex" aria-label="Breadcrumb">
+        <nav class="hidden border-b border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 lg:flex" aria-label="Breadcrumb">
             <ol role="list" class="mx-auto flex w-full max-w-screen-xl space-x-4 px-4 sm:px-6 lg:px-8">
 
                 <!-- Dashboard / Home -->
                 <li class="flex">
                     <div class="flex items-center">
-                        <a href="{{ route('dashboard') }}" class="text-gray-400 hover:text-gray-500">
+                        <a href="{{ route('dashboard') }}" class="text-gray-400 dark:text-white hover:text-gray-500 dark:hover:text-gray-400">
                             <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
                                  aria-hidden="true">
                                 <path fill-rule="evenodd"

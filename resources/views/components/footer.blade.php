@@ -1,46 +1,46 @@
-<footer class="bg-white">
+<footer class="bg-gray-100 dark:bg-gray-900">
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
             @auth
                 <div class="pb-6">
                     <a href="{{ route('dashboard') }}"
-                       class="text-sm leading-6 text-gray-600 hover:text-gray-900">Dashboard</a>
+                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Dashboard</a>
                 </div>
 
                 @can('use_jobs')
                 <div class="pb-6">
                     <a href="{{ route('endpoint-job.index') }}"
-                       class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
+                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Jobs</a>
                 </div>
                 @endcan
 
                 @can('use_endpoint')
                 <div class="pb-6">
-                    <a href="{{ route('endpoint.index') }}" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Endpoints</a>
+                    <a href="{{ route('endpoint.index') }}" class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Endpoints</a>
                 </div>
                 @endcan
 
                 @can('use_repository')
                 <div class="pb-6">
                     <a href="{{ route('repository.index') }}"
-                       class="text-sm leading-6 text-gray-600 hover:text-gray-900">Repositories</a>
+                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Repositories</a>
                 </div>
                 @endcan
 
                 <div class="pb-6">
                     <a href="{{ route('profile.show') }}"
-                       class="text-sm leading-6 text-gray-600 hover:text-gray-900">Profile</a>
+                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Profile</a>
                 </div>
             @endauth
             @guest
                 <div class="pb-6">
                     <a href="{{ route('login') }}"
-                       class="text-sm leading-6 text-gray-600 hover:text-gray-900">Login</a>
+                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Login</a>
                 </div>
 
                 <div class="pb-6">
                     <a href="{{ route('register') }}"
-                       class="text-sm leading-6 text-gray-600 hover:text-gray-900">Register</a>
+                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Register</a>
                 </div>
             @endguest
 
@@ -90,7 +90,7 @@
         {{--                    </svg>--}}
         {{--                </a>--}}
         {{--            </div>--}}
-        <p class="mt-10 text-center text-xs leading-5 text-gray-500">
+        <p class="mt-10 text-center text-xs leading-5 text-gray-500 dark:text-gray-200">
             &copy; {{ now()->format('Y') }} ITrunsDE, Inc. All rights reserved.
         </p>
     </div>

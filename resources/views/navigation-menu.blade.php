@@ -1,4 +1,4 @@
-<nav x-data="{ isOpen: false }" class="bg-sky-500" aria-label="Global">
+<nav x-data="{ isOpen: false }" class="bg-sky-500 dark:bg-sky-900" aria-label="Global">
     <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
         <div class="flex h-16 justify-between">
             <div class="flex items-center px-2 lg:px-0">
@@ -7,29 +7,29 @@
                 </div>
                 <div class="hidden lg:ml-8 lg:flex lg:space-x-4">
                     <a href="{{ route('dashboard') }}"
-                       class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Dashboard</a>
+                       class="rounded-md px-3 py-2 text-sm font-medium text-white dark:text-gray-100 hover:bg-sky-400 dark:hover:bg-sky-700">Dashboard</a>
 
                     @can('use_jobs')
                         <a href="{{ route('endpoint-job.index') }}"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Jobs</a>
+                           class="rounded-md px-3 py-2 text-sm font-medium text-white dark:text-gray-100 hover:bg-sky-400 dark:hover:bg-sky-700">Jobs</a>
                     @endcan
 
                     @can('use_endpoint')
                         <a href="{{ route('endpoint.index') }}"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Endpoints</a>
+                           class="rounded-md px-3 py-2 text-sm font-medium text-white dark:text-gray-100 hover:bg-sky-400 dark:hover:bg-sky-700">Endpoints</a>
                     @endcan
 
                     @can('use_repository')
                         <a href="{{ route('repository.index') }}"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Repositories</a>
+                           class="rounded-md px-3 py-2 text-sm font-medium text-white dark:text-gray-100 hover:bg-sky-400 dark:hover:bg-sky-700">Repositories</a>
                     @endcan
 
                     @hasrole('Super-Admin')
                     <a href="{{ route('admin.user.index') }}"
-                       class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Admin User</a>
+                       class="rounded-md px-3 py-2 text-sm font-medium text-white dark:text-gray-100 hover:bg-sky-400 dark:hover:bg-sky-700">Admin User</a>
 
                     <a href="{{ route('admin.role.index') }}"
-                       class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-sky-400">Admin Roles</a>
+                       class="rounded-md px-3 py-2 text-sm font-medium text-white dark:text-gray-100 hover:bg-sky-400 dark:hover:bg-sky-700">Admin Roles</a>
                     @endhasrole
 
                 </div>
