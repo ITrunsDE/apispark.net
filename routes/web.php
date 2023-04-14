@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\API\Client\GetEndpointJobController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EndpointController;
+use App\Http\Controllers\EndpointJobController;
+use App\Http\Controllers\RepositoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,18 +27,18 @@ Route::middleware([
 ])->group(function () {
 
     // Dashboard
-    Route::get(uri: 'dashboard', action: \App\Http\Controllers\DashboardController::class)->name(name: 'dashboard');
+    Route::get(uri: 'dashboard', action: DashboardController::class)->name(name: 'dashboard');
 
     // Repository
-    Route::resource(name: 'repository', controller: \App\Http\Controllers\RepositoryController::class);
-    Route::get(uri: 'repository/{repository}/send-verification-token', action: [\App\Http\Controllers\RepositoryController::class, 'send_verification'])->name(name: 'repository.send-verification-token');
-    Route::post(uri: 'repository/{repository}/verify-verification-token', action: [\App\Http\Controllers\RepositoryController::class, 'verify_repository'])->name(name: 'repository.verify-verification-token');
+    Route::resource(name: 'repository', controller: RepositoryController::class);
+    Route::get(uri: 'repository/{repository}/send-verification-token', action: [RepositoryController::class, 'send_verification'])->name(name: 'repository.send-verification-token');
+    Route::post(uri: 'repository/{repository}/verify-verification-token', action: [RepositoryController::class, 'verify_repository'])->name(name: 'repository.verify-verification-token');
 
     // Endpoint
-    Route::resource(name: 'endpoint', controller: \App\Http\Controllers\EndpointController::class);
+    Route::resource(name: 'endpoint', controller: EndpointController::class);
 
     // EndpointJob
-    Route::resource(name: 'endpoint-job', controller: \App\Http\Controllers\EndpointJobController::class);
+    Route::resource(name: 'endpoint-job', controller: EndpointJobController::class);
 
 });
 
@@ -41,7 +46,7 @@ Route::middleware([
 //
 //    // Test
 //    Route::get('test', function () {
-//    return response(['data' => ['message' => 'ok']], 200);
+//        return response(['data' => ['message' => 'ok']], 200);
 //    })->name('test');
 //
 //    // GetEndpointJob
