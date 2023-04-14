@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             IntervalSeeder::class,
             TestUserSeeder::class,
+            PermissionRoleSeeder::class,
         ]);
     }
 }
