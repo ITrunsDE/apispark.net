@@ -8,7 +8,6 @@ use App\Models\User;
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
 {

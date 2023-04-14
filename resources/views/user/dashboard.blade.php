@@ -21,21 +21,21 @@
                         <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
                             <dt class="truncate text-sm font-medium text-gray-500">Jobs</dt>
                             <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
-                                {{ $jobs }} / 2
+                                {{ $jobs }} / {{ $max_jobs }}
                             </dd>
                         </div>
 
                         <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
                             <dt class="truncate text-sm font-medium text-gray-500">Endpoints</dt>
                             <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
-                                {{ $endpoints }} / 2
+                                {{ $endpoints }}
                             </dd>
                         </div>
 
                         <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
                             <dt class="truncate text-sm font-medium text-gray-500">Repositories</dt>
                             <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
-                                {{ $repositories }} / 2
+                                {{ $repositories }}
                             </dd>
                         </div>
                     </dl>

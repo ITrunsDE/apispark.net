@@ -56,4 +56,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(related: Repository::class);
     }
+
+    public function maxJobs(): int
+    {
+        return (int) $this->roles()->first()->max_jobs ?? 2;
+    }
 }

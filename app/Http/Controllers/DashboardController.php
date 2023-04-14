@@ -11,6 +11,7 @@ class DashboardController extends Controller
 {
     public function __invoke(): View
     {
+        $max_jobs = auth()->user()->maxJobs();
         $jobs = EndpointJob::where(column: 'user_id', operator: '=', value: auth()->id())->count();
         $endpoints = Endpoint::where(column: 'user_id', operator: '=', value: auth()->id())->count();
         $repositories = Repository::where(column: 'user_id', operator: '=', value: auth()->id())->count();
@@ -18,6 +19,7 @@ class DashboardController extends Controller
         return view(
             view: 'user.dashboard',
             data: compact(
+                'max_jobs',
                 'jobs',
                 'endpoints',
                 'repositories',
