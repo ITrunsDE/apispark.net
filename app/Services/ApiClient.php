@@ -70,25 +70,25 @@ final class ApiClient
             $http = $http->withToken($endpoint->authentication_parameters['bearer']);
         } elseif ($endpoint->authentication === 'api') {
             // Authentication - API Header/Query
-            if ($endpoint->authentication_parameters['add_to'] === 'header') {
+            if ($endpoint->authentication_parameters['api_add_to'] === 'header') {
                 // add api to header
                 $header = [
-                    $endpoint->authentication_parameters['key'] => $endpoint->authentication_parameters['value'],
+                    $endpoint->authentication_parameters['api_key'] => $endpoint->authentication_parameters['api_value'],
                 ];
                 $http = $http->withHeaders($header);
-            } elseif ($endpoint->authentication_parameters['add_to'] === 'query') {
+            } elseif ($endpoint->authentication_parameters['api_add_to'] === 'query') {
                 // add api key/value to parameters
                 array_merge($query_params,
                     [
-                        $endpoint->authentication_parameters['key'] => $endpoint->authentication_parameters['value'],
+                        $endpoint->authentication_parameters['api_key'] => $endpoint->authentication_parameters['api_value'],
                     ]
                 );
             }
         } elseif ($endpoint->authentication === 'basic') {
             // Authentication - Basic Authentication
             $http = $http->withBasicAuth(
-                username: $endpoint->authentication_parameters['username'],
-                password: $endpoint->authentication_parameters['password']
+                username: $endpoint->authentication_parameters['basic_username'],
+                password: $endpoint->authentication_parameters['basic_password']
             );
         }
 
