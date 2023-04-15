@@ -148,4 +148,30 @@ class EndpointJobController extends Controller
 
         return to_route(route: 'endpoint-job.index');
     }
+
+    public function activate(EndpointJob $endpointJob): RedirectResponse
+    {
+        $endpointJob->update(['active' => 1]);
+
+        Notification::make()
+            ->title('Job was activated successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint-job.index');
+    }
+
+    public function deactivate(EndpointJob $endpointJob): RedirectResponse
+    {
+        $endpointJob->update(['active' => 0]);
+
+        Notification::make()
+            ->title('Job was deactivated successfully.')
+            ->success()
+            ->duration(5000)
+            ->send();
+
+        return to_route(route: 'endpoint-job.index');
+    }
 }

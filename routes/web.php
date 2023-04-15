@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EndpointController;
 use App\Http\Controllers\EndpointJobController;
 use App\Http\Controllers\RepositoryController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,8 @@ Route::middleware([
 
     // EndpointJob
     Route::resource(name: 'endpoint-job', controller: EndpointJobController::class);
+    Route::get(uri: 'endpoint-job/activate/{endpointJob}', action: [EndpointJobController::class, 'activate'])->name('endpoint-job.activate');
+    Route::get(uri: 'endpoint-job/deactivate/{endpointJob}', action: [EndpointJobController::class, 'deactivate'])->name('endpoint-job.deactivate');
 
     // Admin Functions
     Route::middleware(['role:Super-Admin'])->prefix('admin')->name('admin.')->group(function () {
