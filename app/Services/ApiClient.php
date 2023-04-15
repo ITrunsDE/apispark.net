@@ -91,6 +91,7 @@ final class ApiClient
                 password: $endpoint->authentication_parameters['basic_password']
             );
         }
+//        $response = $http->get($endpoint->url, $query_params);
 
         // Basic HTTP REST api call
         return $http->get($endpoint->url, $query_params);
@@ -106,12 +107,29 @@ final class ApiClient
             host: 'APISpark.net'
         );
 
-        // parse data and send
-        foreach ($data as $entry) {
-            $logscale_client->create_structured_event($entry);
+        // check if the array is nested
+        if ($this->is_nested_array(array: $data)) {
+            foreach ($data as $entry) {
+                $logscale_client->create_structured_event($entry);
+            }
+        } else {
+            $logscale_client->create_structured_event($data);
         }
 
         // send data
         $logscale_client->send();
+    }
+
+    private function is_nested_array(array|string $array): bool
+    {
+        if (is_array(value: $array)) {
+            foreach ($array as $element) {
+                if (is_array(value: $element)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
