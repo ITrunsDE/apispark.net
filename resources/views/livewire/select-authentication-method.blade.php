@@ -40,11 +40,10 @@
                     Add API Key to ...
                 </label>
                 <div class="mt-2">
-                    <select id="interval_id" name="authentication_parameters[{{ $authentication.'add_to' }}]" autocomplete="add-to-header"
-{{--                            wire:model="authentication_parameters['add_to']"--}}
+                    <select id="interval_id" name="authentication_parameters[{{ $authentication }}_add_to]" autocomplete="add-to-header"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 dark:bg-white/5 dark:text-white dark:ring-white/5 dark:focus:ring-sky-800 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option value="header" @selected(isset($authentication_parameters[$authentication.'add_to']) ? $authentication_parameters[$authentication.'add_to'] == 'header' : false)))>Header</option>
-                            <option value="query" @selected(isset($authentication_parameters[$authentication.'add_to']) ? $authentication_parameters[$authentication.'add_to'] == 'query' : false)>Query params</option>
+                            <option value="header" @selected(isset($authentication_parameters[$authentication.'_add_to']) ? $authentication_parameters[$authentication.'_add_to'] == 'header' : false)))>Header</option>
+                            <option value="query" @selected(isset($authentication_parameters[$authentication.'_add_to']) ? $authentication_parameters[$authentication.'_add_to'] == 'query' : false)>Query params</option>
                     </select>
                 </div>
             </div>
@@ -52,9 +51,9 @@
                 <label for="authentication_parameters_key"
                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Key</label>
                 <div class="mt-2">
-                    <input type="text" name="authentication_parameters[{{ $authentication.'key' }}]"
+                    <input type="text" name="authentication_parameters[{{ $authentication }}_key]"
                            id="authentication_parameters_key" autocomplete="authentication_parameters"
-                           value="{{ isset($authentication_parameters[$authentication.'key']) ? $authentication_parameters[$authentication.'key'] : '' }}"
+                           value="{{ isset($authentication_parameters[$authentication.'_key']) ? $authentication_parameters[$authentication.'_key'] : '' }}"
                            class="block w-full rounded-md border-0 py-1.5 dark:bg-white/5 dark:text-white dark:ring-white/5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-sky-800 sm:text-sm sm:leading-6">
                 </div>
             </div>
@@ -62,9 +61,9 @@
                 <label for="authentication_parameters_value"
                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Value</label>
                 <div class="mt-2">
-                    <input type="text" name="authentication_parameters[{{ $authentication.'value' }}]"
+                    <input type="text" name="authentication_parameters[{{ $authentication }}_value]"
                            id="authentication_parameters_value" autocomplete="authentication_parameters"
-                           value="{{ isset($authentication_parameters[$authentication.'value']) ? $authentication_parameters[$authentication.'value'] : '' }}"
+                           value="{{ isset($authentication_parameters[$authentication.'_value']) ? $authentication_parameters[$authentication.'_value'] : '' }}"
                            class="block w-full rounded-md border-0 py-1.5 dark:bg-white/5 dark:text-white dark:ring-white/5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-sky-800 sm:text-sm sm:leading-6">
                 </div>
             </div>
@@ -83,7 +82,7 @@
                 <label for="authentication_parameters_password"
                        class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Password</label>
                 <div class="mt-2">
-                    <input type="text" name="authentication_parameters[{{ $authentication }}_password]"
+                    <input type="password" name="authentication_parameters[{{ $authentication }}_password]"
                            id="authentication_parameters_password" autocomplete="authentication_parameters_password"
                            value="{{ isset($authentication_parameters[$authentication.'_password']) ? $authentication_parameters[$authentication.'_password'] : '' }}"
                            class="block w-full rounded-md border-0 py-1.5 dark:bg-white/5 dark:text-white dark:ring-white/5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-sky-800 sm:text-sm sm:leading-6">
