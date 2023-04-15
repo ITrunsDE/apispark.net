@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Models\Endpoint;
 use App\Models\Repository;
 use App\Models\User;
+use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
@@ -47,7 +48,7 @@ final class ApiClient
             // try to fetch json data
             try {
                 $this->ingest(repository: $job->repository, data: $response->json());
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 dd($e);
             }
         }
@@ -57,17 +58,42 @@ final class ApiClient
 
     public function get(Endpoint $endpoint): Response
     {
+        $query_params = [];
+
         $http = HTTP::retry(times: 3, sleepMilliseconds: 1500)
             ->withUserAgent(userAgent: 'apispark.net/1.0')
             ->acceptJson();
 
         // add authentication methods
         if ($endpoint->authentication === 'bearer') {
+            // Authentication - Bearer Token
             $http = $http->withToken($endpoint->authentication_parameters['bearer']);
+        } elseif ($endpoint->authentication === 'api') {
+            // Authentication - API Header/Query
+            if ($endpoint->authentication_parameters['add_to'] === 'header') {
+                // add api to header
+                $header = [
+                    $endpoint->authentication_parameters['key'] => $endpoint->authentication_parameters['value'],
+                ];
+                $http = $http->withHeaders($header);
+            } elseif ($endpoint->authentication_parameters['add_to'] === 'query') {
+                // add api key/value to parameters
+                array_merge($query_params,
+                    [
+                        $endpoint->authentication_parameters['key'] => $endpoint->authentication_parameters['value'],
+                    ]
+                );
+            }
+        } elseif ($endpoint->authentication === 'basic') {
+            // Authentication - Basic Authentication
+            $http = $http->withBasicAuth(
+                username: $endpoint->authentication_parameters['username'],
+                password: $endpoint->authentication_parameters['password']
+            );
         }
 
         // Basic HTTP REST api call
-        return $http->get($endpoint->url);
+        return $http->get($endpoint->url, $query_params);
     }
 
     private function ingest(Repository $repository, array $data): void
