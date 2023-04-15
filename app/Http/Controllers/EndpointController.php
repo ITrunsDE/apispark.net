@@ -49,11 +49,6 @@ class EndpointController extends Controller
         return to_route(route: 'endpoint.index');
     }
 
-    public function show(Endpoint $endpoint)
-    {
-        //todo: create show view with information about where the
-    }
-
     public function edit(Endpoint $endpoint): View
     {
         return view(

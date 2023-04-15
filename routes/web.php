@@ -34,7 +34,7 @@ Route::middleware([
     Route::post(uri: 'repository/{repository}/verify-verification-token', action: [RepositoryController::class, 'verify_repository'])->name(name: 'repository.verify-verification-token');
 
     // Endpoint
-    Route::resource(name: 'endpoint', controller: EndpointController::class);
+    Route::resource(name: 'endpoint', controller: EndpointController::class)->except(['show']);
 
     // EndpointJob
     Route::resource(name: 'endpoint-job', controller: EndpointJobController::class);
