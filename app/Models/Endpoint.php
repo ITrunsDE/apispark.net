@@ -15,12 +15,13 @@ class Endpoint extends Model
         'user_id',
         'name',
         'url',
-        'headers',
+        'authentication',
+        'authentication_parameters',
         'active',
     ];
 
     protected $casts = [
-        'headers' => 'json',
+        'authentication_parameters' => 'json',
         'active' => 'boolean',
     ];
 

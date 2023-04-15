@@ -32,11 +32,12 @@
                     <div class="space-y-12">
                         <div class="border-b border-gray-900/10 dark:border-gray-100 pb-12">
 
-                            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-200">Fill out the required information to create
+                            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-200">Fill out the required
+                                information to create
                                 a new link to your repository at Logscale.</p>
 
                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                                <div class="sm:col-span-2">
+                                <div class="sm:col-span-3">
                                     <label for="name"
                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Name</label>
                                     <div class="mt-2">
@@ -46,9 +47,10 @@
                                     </div>
                                 </div>
 
-                                <div class="sm:col-span-4">
+                                <div class="sm:col-span-3">
                                     <label for="url"
-                                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">API endpoint
+                                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">API
+                                        endpoint
                                         url</label>
                                     <div class="mt-2">
                                         <input type="text" name="url" id="url"
@@ -58,12 +60,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <livewire:select-authentication-method :authentication="$endpoint->authentication" :authentication_parameters="$endpoint->authentication_parameters"/>
                         </div>
-
                     </div>
-
                     <div class="mt-6 flex items-center justify-end gap-x-6">
-                        <a href="{{ route('endpoint.index') }}" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Cancel</a>
+                        <a href="{{ route('endpoint.index') }}"
+                           class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Cancel</a>
                         <button type="submit"
                                 class="rounded-md bg-sky-400 dark:bg-sky-600 px-3 py-2 text-sm font-semibold text-white dark:text-gray-100 shadow-sm hover:bg-sky-400 dark:hover:bg-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
                             Save
@@ -118,7 +120,8 @@
                     </div>
 
                     <div class="mt-6 flex items-center justify-end gap-x-6">
-                        <a href="{{ route('endpoint.index') }}" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Cancel</a>
+                        <a href="{{ route('endpoint.index') }}"
+                           class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Cancel</a>
                         <button type="submit"
                                 class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
                             Delete

@@ -18,7 +18,8 @@ return new class extends Migration
 
             $table->string('name');
             $table->text('url')->nullable();
-            $table->json('headers')->nullable();
+            $table->string('authentication')->default('none');
+            $table->json('authentication_parameters')->nullable();
             $table->boolean('active')->default(true);
 
             $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();

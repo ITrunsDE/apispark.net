@@ -57,9 +57,15 @@ class EndpointController extends Controller
         );
     }
 
-    public function update(EndpointUpdateRequest $request, Endpoint $endpoint)
+    public function update(EndpointUpdateRequest $request, Endpoint $endpoint): RedirectResponse
     {
         $data = $request->validated();
+
+        // reset the information, saved in the database
+        if($data['authentication'] === 'none') {
+            $data['authentication_parameters'] = [];
+        }
+
         $endpoint->update($data);
 
         Notification::make()
@@ -71,7 +77,7 @@ class EndpointController extends Controller
         return to_route(route: 'endpoint.index');
     }
 
-    public function destroy(Endpoint $endpoint)
+    public function destroy(Endpoint $endpoint): RedirectResponse
     {
         $endpoint->delete();
 
