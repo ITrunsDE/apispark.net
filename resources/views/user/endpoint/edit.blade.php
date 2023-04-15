@@ -60,7 +60,10 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- select authentication method-->
                             <livewire:select-authentication-method :authentication="$endpoint->authentication" :authentication_parameters="$endpoint->authentication_parameters"/>
+
                         </div>
                     </div>
                     <div class="mt-6 flex items-center justify-end gap-x-6">

@@ -58,6 +58,10 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- select authentication method-->
+                            <livewire:select-authentication-method :authentication="old('authentication')" :authentication_parameters="old('authentication_parameters')"/>
+
                         </div>
 
                     </div>

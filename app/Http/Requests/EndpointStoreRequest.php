@@ -14,8 +14,10 @@ class EndpointStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'url' => 'required|url',
+            'name' => ['required', 'string'],
+            'url' => ['required', 'url'],
+            'authentication' => ['required', 'string'],
+            'authentication_parameters' => ['nullable', 'array'],
         ];
     }
 }
