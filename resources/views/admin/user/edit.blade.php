@@ -40,7 +40,7 @@
                                     <div class="mt-2">
                                         <input type="text" name="name" id="name" autocomplete="repository-name"
                                                value="{{ $user->name }}"
-                                               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                               class="block w-full rounded-md border-0 py-1.5 dark:bg-white/5 dark:text-white dark:ring-white/5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-sky-800 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
                                 <div class="sm:col-span-2">
@@ -50,7 +50,7 @@
                                     </label>
                                     <div class="mt-2">
                                         <select id="role" name="role" autocomplete="role"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 dark:bg-white/5 dark:text-white dark:ring-white/5 dark:focus:ring-sky-800 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                             @foreach(Role::orderBy('name')->get() as $role)
                                                 <option
                                                     @selected($user->hasRole($role)) value="{{ $role->name }}">{{ ucfirst($role->name) }}</option>
@@ -67,7 +67,7 @@
                                         <input type="text" name="email" id="email"
                                                autocomplete="email"
                                                value="{{ $user->email }}"
-                                               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                               class="block w-full rounded-md border-0 py-1.5 dark:bg-white/5 dark:text-white dark:ring-white/5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-sky-800 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
                                 <div class="sm:col-span-1">
@@ -79,7 +79,7 @@
                                         <input type="text" name="email_verified_at" id="email_verified_at"
                                                autocomplete="email_verified_at"
                                                value="{{ $user->email_verified_at }}"
-                                               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                               class="block w-full rounded-md border-0 py-1.5 dark:bg-white/5 dark:text-white dark:ring-white/5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-sky-800 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@
                             <tbody class="divide-y divide-gray-200 bg-white dark:bg-gray-600">
                             @forelse($user->repositories as $repo)
                                 <tr>
-                                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8 flex">
+                                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6 lg:pl-8 flex">
                                         @if($repo->active)
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                  fill="currentColor" class="w-5 h-5 text-green-600 mr-2">

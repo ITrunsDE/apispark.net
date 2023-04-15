@@ -9,32 +9,32 @@
 
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
-                        <h1 class="text-base font-semibold leading-6 text-gray-900">License Overview</h1>
+                        <h1 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">License Overview</h1>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-base font-sm leading-6 text-gray-900">
+                    <h3 class="text-base font-sm leading-6 text-gray-900 dark:text-white">
                         Licensed entries for your account.
                     </h3>
                     <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                        <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-                            <dt class="truncate text-sm font-medium text-gray-500">Jobs</dt>
-                            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
+                        <div class="overflow-hidden rounded-lg dark:bg-white/5 bg-gray-900 px-4 py-5 shadow sm:p-6">
+                            <dt class="truncate text-sm font-medium text-gray-500 dark:text-white">Jobs</dt>
+                            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-200">
                                 {{ $jobs }} / {{ $max_jobs }}
                             </dd>
                         </div>
 
-                        <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-                            <dt class="truncate text-sm font-medium text-gray-500">Endpoints</dt>
-                            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
+                        <div class="overflow-hidden rounded-lg dark:bg-white/5 bg-white px-4 py-5 shadow sm:p-6">
+                            <dt class="truncate text-sm font-medium text-gray-500 dark:text-white">Endpoints</dt>
+                            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-200">
                                 {{ $endpoints }}
                             </dd>
                         </div>
 
-                        <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-                            <dt class="truncate text-sm font-medium text-gray-500">Repositories</dt>
-                            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
+                        <div class="overflow-hidden rounded-lg dark:bg-white/5 bg-white px-4 py-5 shadow sm:p-6">
+                            <dt class="truncate text-sm font-medium text-gray-500 dark:text-white">Repositories</dt>
+                            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-200">
                                 {{ $repositories }}
                             </dd>
                         </div>

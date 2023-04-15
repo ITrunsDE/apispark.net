@@ -10,7 +10,8 @@
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Users</h1>
-                        <p class="mt-2 text-sm text-gray-700 dark:text-white ">A list of all the users that are currently using the
+                        <p class="mt-2 text-sm text-gray-700 dark:text-white ">A list of all the users that are
+                            currently using the
                             software.</p>
                     </div>
                     <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -34,13 +35,16 @@
                                         class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
                                         Role
                                     </th>
-                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
+                                    <th scope="col"
+                                        class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
                                         Email
                                     </th>
-                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
+                                    <th scope="col"
+                                        class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
                                         Registered
                                     </th>
-                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
+                                    <th scope="col"
+                                        class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white ">
                                         Jobs
                                     </th>
                                     {{--                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>--}}
@@ -52,7 +56,7 @@
                                 <tbody class="divide-y divide-gray-200 bg-white dark:bg-gray-600">
                                 @forelse($users as $user)
                                     <tr>
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-6 lg:pl-8">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6 lg:pl-8">
                                             <a href="{{ route('admin.user.edit', $user) }}">
                                                 {{ $user->name }}
                                             </a>
