@@ -17,7 +17,7 @@ class EndpointUpdateRequest extends FormRequest
             'name' => ['required', 'string'],
             'url' => ['required', 'url'],
             'authentication' => ['required', 'string'],
-            'authentication_parameters' => ['nullable', 'array']
+            'authentication_parameters' => ['nullable', 'array'],
         ];
     }
 }

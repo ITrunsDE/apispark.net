@@ -62,7 +62,7 @@ class EndpointController extends Controller
         $data = $request->validated();
 
         // reset the information, saved in the database
-        if($data['authentication'] === 'none') {
+        if ($data['authentication'] === 'none') {
             $data['authentication_parameters'] = [];
         }
 
