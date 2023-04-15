@@ -48,7 +48,7 @@ class EndpointJobController extends Controller
             ->orderBy(column: 'interval')
             ->pluck(column: 'name', key: 'id');
 
-        $can_not_create_jobs = auth()->user()->maxJobs() >= auth()->user()->endpointJobs()->count();
+        $can_not_create_jobs = auth()->user()->endpointJobs()->count() >= auth()->user()->maxJobs();
 
         return view(
             view: 'user.endpoint_job.create',

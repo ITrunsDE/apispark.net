@@ -57,11 +57,17 @@ final class ApiClient
 
     public function get(Endpoint $endpoint): Response
     {
+        $http = HTTP::retry(times: 3, sleepMilliseconds: 1500)
+            ->withUserAgent(userAgent: 'apispark.net/1.0')
+            ->acceptJson();
+
+        // add authentication methods
+        if ($endpoint->authentication === 'bearer') {
+            $http = $http->withToken($endpoint->authentication_parameters['bearer']);
+        }
+
         // Basic HTTP REST api call
-        return HTTP::withHeaders($this->basic_headers)
-            ->retry(times: 3, sleepMilliseconds: 1500)
-            ->acceptJson()
-            ->get(url: $endpoint->url);
+        return $http->get($endpoint->url);
     }
 
     private function ingest(Repository $repository, array $data): void
@@ -73,7 +79,13 @@ final class ApiClient
             base_url: $repository->base_url,
             host: 'APISpark.net'
         );
+
         // parse data and send
-        $logscale_client->create_structured_event($data)->send();
+        foreach ($data as $entry) {
+            $logscale_client->create_structured_event($entry);
+        }
+
+        // send data
+        $logscale_client->send();
     }
 }
