@@ -4,7 +4,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EndpointController;
 use App\Http\Controllers\EndpointJobController;
 use App\Http\Controllers\RepositoryController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,4 +62,4 @@ Route::middleware([
 //    Route::get(uri: 'jobs', action: \App\Http\Controllers\API\Client\GetEndpointJobController::class)->name(name: 'get-endpoint-jobs');
 //});
 
-//Route::get(uri: 'endpointjob-wizard', action: \App\Http\Livewire\JobWizard::class)->name('endpointjob-wizard');
+Route::get(uri: 'endpointjob-wizard', action: \App\Http\Livewire\JobWizard::class)->name('endpointjob-wizard');
