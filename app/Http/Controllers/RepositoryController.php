@@ -66,7 +66,7 @@ class RepositoryController extends Controller
         );
     }
 
-    public function update(RepositoryUpdateRequest $request, Repository $repository)
+    public function update(RepositoryUpdateRequest $request, Repository $repository): RedirectResponse
     {
         $data = $request->validated();
 
@@ -90,6 +90,7 @@ class RepositoryController extends Controller
 
         // if the ingest_token get changed, then force new validation
         if ($data['ingest_token'] !== $repository->ingest_token) {
+            $data['verification_token'] = uuid_create();
             $data['verified_at'] = null;
         }
 
@@ -102,10 +103,10 @@ class RepositoryController extends Controller
             ->duration(5000)
             ->send();
 
-        return to_route(route: 'repository.index');
+        return to_route(route: 'repository.edit', parameters: $repository);
     }
 
-    public function destroy(RepositoryDeleteRequest $request, Repository $repository)
+    public function destroy(RepositoryDeleteRequest $request, Repository $repository): RedirectResponse
     {
         $repository->delete();
 
@@ -118,30 +119,30 @@ class RepositoryController extends Controller
         return to_route(route: 'repository.index');
     }
 
-    public function send_verification(Repository $repository): RedirectResponse
-    {
-        $repository->send_verification();
+//    public function send_verification(Repository $repository): RedirectResponse
+//    {
+//        $repository->send_verification();
+//
+//        return to_route(route: 'repository.edit', parameters: $repository);
+//    }
 
-        return to_route(route: 'repository.edit', parameters: $repository);
-    }
-
-    public function verify_repository(RepositoryVerifyRequest $request, Repository $repository): RedirectResponse
-    {
-        if ($request->validated(key: 'verification_token') === $repository->verification_token) {
-            $repository->update(['verified_at' => now()]);
-            Notification::make()
-                ->title('Repository successfully verified.')
-                ->success()
-                ->duration(5000)
-                ->send();
-        } else {
-            Notification::make()
-                ->title('Repository could not be verified.')
-                ->danger()
-                ->duration(5000)
-                ->send();
-        }
-
-        return to_route(route: 'repository.edit', parameters: $repository);
-    }
+//    public function verify_repository(RepositoryVerifyRequest $request, Repository $repository): RedirectResponse
+//    {
+//        if ($request->validated(key: 'verification_token') === $repository->verification_token) {
+//            $repository->update(['verified_at' => now()]);
+//            Notification::make()
+//                ->title('Repository successfully verified.')
+//                ->success()
+//                ->duration(5000)
+//                ->send();
+//        } else {
+//            Notification::make()
+//                ->title('Repository could not be verified.')
+//                ->danger()
+//                ->duration(5000)
+//                ->send();
+//        }
+//
+//        return to_route(route: 'repository.edit', parameters: $repository);
+//    }
 }
