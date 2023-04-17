@@ -44,7 +44,7 @@ class Repository extends Model
             ->whereNotNull(columns: 'verified_at');
     }
 
-    public function send_verification(): bool
+    public function send_verification()
     {
         // only send if not verified
         if (! is_null($this->verified_at)) {
@@ -58,10 +58,8 @@ class Repository extends Model
             host: 'apispark.net/1.0'
         );
 
-        $logscale->create_structured_event([
+        return $logscale->create_structured_event([
             'verification_token' => $this->verification_token,
         ])->send();
-
-        return true;
     }
 }
