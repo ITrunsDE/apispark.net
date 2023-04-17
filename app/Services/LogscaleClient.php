@@ -31,7 +31,7 @@ final class LogscaleClient extends HTTP
             ->acceptJson();
     }
 
-    public function send(): bool
+    public function send(): bool|string
     {
         $send = false;
         $url = '';
@@ -71,7 +71,7 @@ final class LogscaleClient extends HTTP
             }
 
             // ToDo: handle exceptions for any error
-            dd($response->body());
+            return $response->body();
         }
 
         return true;
