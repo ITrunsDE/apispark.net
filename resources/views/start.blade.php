@@ -24,16 +24,18 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="{{ route('start') }}" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+                    <a href="{{ route('start') }}"
+                       class="text-sm font-semibold leading-6 text-gray-900">APIspark</a>
 
-{{--                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>--}}
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
 
-{{--                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>--}}
+                    {{--                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>--}}
 
-{{--                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>--}}
+                    {{--                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>--}}
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+                    <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                            aria-hidden="true">&rarr;</span></a>
                 </div>
             </nav>
             <div x-show="isOpen"
@@ -44,7 +46,7 @@
                     class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
                         <a href="#" class="-m-1.5 p-1.5">
-                            <span class="sr-only">Your Company</span>
+                            <span class="sr-only">apispark.net</span>
                             <img class="h-8 w-auto"
                                  src="https://tailwindui.com/img/logos/mark.svg?color=sky&shade=600" alt="">
                         </a>
@@ -64,14 +66,14 @@
                                 <a href="{{ route('start') }}"
                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
 
-{{--                                <a href="#"--}}
-{{--                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>--}}
+                                {{--                                <a href="#"--}}
+                                {{--                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>--}}
 
-{{--                                <a href="#"--}}
-{{--                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>--}}
+                                {{--                                <a href="#"--}}
+                                {{--                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>--}}
 
-{{--                                <a href="#"--}}
-{{--                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>--}}
+                                {{--                                <a href="#"--}}
+                                {{--                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>--}}
                             </div>
                             <div class="py-6">
                                 <a href="{{ route('login') }}"
@@ -93,8 +95,8 @@
                         class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#7dd3fc] to-[#0c4a6e] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
                 </div>
-                <div class="py-12 sm:py-32">
-                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="py-2 sm:py-2">
+                    <div class="mx-auto max-w-7xl px-3 lg:px-4">
                         <div class="mx-auto max-w-2xl text-center">
                             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                                 Optimize API data storage with Apispark.net and Logscale
@@ -112,10 +114,9 @@
                         </div>
                         <div class="mt-16 flow-root sm:mt-24">
                             <div
-                                class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                                <img src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                                     alt="App screenshot" width="2432" height="1442"
-                                     class="rounded-md shadow-2xl ring-1 ring-gray-900/10">
+                                class="-m-2 rounded-l bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-xl lg:p-4 bg-white">
+                                <img src="image/rest_api_fetching_data_via_apispark.png" alt="App screenshot"
+                                     class="rounded-md shadow-2xl ring-1 ring-gray-900/10 ">
                             </div>
                         </div>
                     </div>
@@ -130,44 +131,45 @@
             </div>
 
             <!-- Logo cloud -->
-{{--            <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
-{{--                <div--}}
-{{--                    class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">--}}
-{{--                    <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"--}}
-{{--                         src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor"--}}
-{{--                         width="158" height="48">--}}
-{{--                    <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"--}}
-{{--                         src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158"--}}
-{{--                         height="48">--}}
-{{--                    <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"--}}
-{{--                         src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158"--}}
-{{--                         height="48">--}}
-{{--                    <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"--}}
-{{--                         src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal"--}}
-{{--                         width="158" height="48">--}}
-{{--                    <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"--}}
-{{--                         src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic"--}}
-{{--                         width="158" height="48">--}}
-{{--                </div>--}}
-{{--                <div class="mt-16 flex justify-center">--}}
-{{--                    <p class="relative rounded-full px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20">--}}
-{{--                        <span class="hidden md:inline">Transistor saves up to $40,000 per year, per employee by working with us.</span>--}}
-{{--                        <a href="#" class="font-semibold text-sky-600"><span class="absolute inset-0"--}}
-{{--                                                                                aria-hidden="true"></span> Read our case--}}
-{{--                            study <span aria-hidden="true">&rarr;</span></a>--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
+            {{--                <div--}}
+            {{--                    class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">--}}
+            {{--                    <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"--}}
+            {{--                         src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor"--}}
+            {{--                         width="158" height="48">--}}
+            {{--                    <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"--}}
+            {{--                         src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158"--}}
+            {{--                         height="48">--}}
+            {{--                    <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"--}}
+            {{--                         src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158"--}}
+            {{--                         height="48">--}}
+            {{--                    <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"--}}
+            {{--                         src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal"--}}
+            {{--                         width="158" height="48">--}}
+            {{--                    <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"--}}
+            {{--                         src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic"--}}
+            {{--                         width="158" height="48">--}}
+            {{--                </div>--}}
+            {{--                <div class="mt-16 flex justify-center">--}}
+            {{--                    <p class="relative rounded-full px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20">--}}
+            {{--                        <span class="hidden md:inline">Transistor saves up to $40,000 per year, per employee by working with us.</span>--}}
+            {{--                        <a href="#" class="font-semibold text-sky-600"><span class="absolute inset-0"--}}
+            {{--                                                                                aria-hidden="true"></span> Read our case--}}
+            {{--                            study <span aria-hidden="true">&rarr;</span></a>--}}
+            {{--                    </p>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
             <!-- Feature section -->
-            <div class="mx-auto max-w-7xl px-6 sm:mt-56 lg:px-8">
+            <div class="mx-auto max-w-7xl px-3 sm:mt-56 lg:px-4">
                 <div class="mx-auto max-w-2xl lg:text-center">
                     <h2 class="text-base font-semibold leading-7 text-sky-600">Effortless data handling</h2>
                     <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                         Streamline API Data Management with Apispark.net
                     </p>
                     <p class="mt-6 text-lg leading-8 text-gray-600">
-                        Easy management and secure storage of API data with Apispark.net - Powerful SaaS with seamless integration with Logscale repositories, customizable job scheduling, and secure data transfer.
+                        Easy management and secure storage of API data with Apispark.net - Powerful SaaS with seamless
+                        integration with Logscale repositories, customizable job scheduling, and secure data transfer.
                     </p>
                 </div>
                 <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -185,7 +187,9 @@
                                 Integration with any number of Logscale repositories,
                             </dt>
                             <dd class="mt-2 text-base leading-7 text-gray-600">
-                                Apispark.net allows users to integrate multiple Logscale repositories to create a centralized data management solution regardless of whether they are using community or cloud editions. 
+                                Apispark.net allows users to integrate multiple Logscale repositories to create a
+                                centralized data management solution regardless of whether they are using community or
+                                cloud editions. 
                             </dd>
                         </div>
 
@@ -202,7 +206,9 @@
                                 Retrieval of data from any REST API endpoint
                             </dt>
                             <dd class="mt-2 text-base leading-7 text-gray-600">
-                                Apispark.net allows users to retrieve data from any REST API endpoint. Optional authentication uses bearer tokens or header customization to ensure secure and efficient data transfer. 
+                                Apispark.net allows users to retrieve data from any REST API endpoint. Optional
+                                authentication uses bearer tokens or header customization to ensure secure and efficient
+                                data transfer. 
                             </dd>
                         </div>
 
@@ -219,7 +225,8 @@
                                 Direct forwarding of data to repositories without caching
                             </dt>
                             <dd class="mt-2 text-base leading-7 text-gray-600">
-                                Apispark.net ensures secure data transfer by transferring data directly to the repository without buffering after retrieval. 
+                                Apispark.net ensures secure data transfer by transferring data directly to the
+                                repository without buffering after retrieval. 
                             </dd>
                         </div>
 
@@ -236,7 +243,8 @@
                                 Job scheduling with different intervals and execution times
                             </dt>
                             <dd class="mt-2 text-base leading-7 text-gray-600">
-                                Apipark.net provides flexible job scheduling by allowing users to select different intervals and run times for jobs. 
+                                Apipark.net provides flexible job scheduling by allowing users to select different
+                                intervals and run times for jobs. 
                             </dd>
                         </div>
                     </dl>
@@ -244,260 +252,260 @@
             </div>
 
             <!-- Testimonial section -->
-{{--            <div class="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">--}}
-{{--                <div--}}
-{{--                    class="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">--}}
-{{--                    <img class="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"--}}
-{{--                         src="https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8ODl8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1216&q=80"--}}
-{{--                         alt="">--}}
-{{--                    <div class="absolute inset-0 bg-gray-900/90 mix-blend-multiply"></div>--}}
-{{--                    <div class="absolute -left-80 -top-56 transform-gpu blur-3xl" aria-hidden="true">--}}
-{{--                        <div--}}
-{{--                            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-[0.45]"--}}
-{{--                            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>--}}
-{{--                    </div>--}}
-{{--                    <div class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"--}}
-{{--                         aria-hidden="true">--}}
-{{--                        <div--}}
-{{--                            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-25"--}}
-{{--                            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>--}}
-{{--                    </div>--}}
-{{--                    <div class="relative mx-auto max-w-2xl lg:mx-0">--}}
-{{--                        <img class="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-white.svg"--}}
-{{--                             alt="">--}}
-{{--                        <figure>--}}
-{{--                            <blockquote class="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">--}}
-{{--                                <p>“Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu--}}
-{{--                                    praesent at a. Ornare arcu gravida natoque erat et cursus tortor consequat at.--}}
-{{--                                    Vulputate gravida sociis enim nullam ultricies habitant malesuada lorem ac.”</p>--}}
-{{--                            </blockquote>--}}
-{{--                            <figcaption class="mt-6 text-base text-white">--}}
-{{--                                <div class="font-semibold">Judith Black</div>--}}
-{{--                                <div class="mt-1">CEO of Tuple</div>--}}
-{{--                            </figcaption>--}}
-{{--                        </figure>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">--}}
+            {{--                <div--}}
+            {{--                    class="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">--}}
+            {{--                    <img class="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"--}}
+            {{--                         src="https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8ODl8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1216&q=80"--}}
+            {{--                         alt="">--}}
+            {{--                    <div class="absolute inset-0 bg-gray-900/90 mix-blend-multiply"></div>--}}
+            {{--                    <div class="absolute -left-80 -top-56 transform-gpu blur-3xl" aria-hidden="true">--}}
+            {{--                        <div--}}
+            {{--                            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-[0.45]"--}}
+            {{--                            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"--}}
+            {{--                         aria-hidden="true">--}}
+            {{--                        <div--}}
+            {{--                            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-25"--}}
+            {{--                            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="relative mx-auto max-w-2xl lg:mx-0">--}}
+            {{--                        <img class="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-white.svg"--}}
+            {{--                             alt="">--}}
+            {{--                        <figure>--}}
+            {{--                            <blockquote class="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">--}}
+            {{--                                <p>“Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu--}}
+            {{--                                    praesent at a. Ornare arcu gravida natoque erat et cursus tortor consequat at.--}}
+            {{--                                    Vulputate gravida sociis enim nullam ultricies habitant malesuada lorem ac.”</p>--}}
+            {{--                            </blockquote>--}}
+            {{--                            <figcaption class="mt-6 text-base text-white">--}}
+            {{--                                <div class="font-semibold">Judith Black</div>--}}
+            {{--                                <div class="mt-1">CEO of Tuple</div>--}}
+            {{--                            </figcaption>--}}
+            {{--                        </figure>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
             <!-- Pricing section -->
-{{--            <div class="py-24 sm:pt-48">--}}
-{{--                <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
-{{--                    <div class="mx-auto max-w-4xl text-center">--}}
-{{--                        <h2 class="text-base font-semibold leading-7 text-sky-600">Pricing</h2>--}}
-{{--                        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Pricing plans for--}}
-{{--                            teams of&nbsp;all&nbsp;sizes</p>--}}
-{{--                    </div>--}}
-{{--                    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">Distinctio et nulla--}}
-{{--                        eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in.--}}
-{{--                        Explicabo id ut laborum.</p>--}}
-{{--                    <div--}}
-{{--                        class="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">--}}
-{{--                        <div--}}
-{{--                            class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 lg:mt-8 lg:rounded-r-none">--}}
-{{--                            <div>--}}
-{{--                                <div class="flex items-center justify-between gap-x-4">--}}
-{{--                                    <h3 id="tier-freelancer" class="text-lg font-semibold leading-8 text-gray-900">--}}
-{{--                                        Freelancer</h3>--}}
-{{--                                </div>--}}
-{{--                                <p class="mt-4 text-sm leading-6 text-gray-600">The essentials to provide your best work--}}
-{{--                                    for clients.</p>--}}
-{{--                                <p class="mt-6 flex items-baseline gap-x-1">--}}
-{{--                                    <span class="text-4xl font-bold tracking-tight text-gray-900">$24</span>--}}
-{{--                                    <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>--}}
-{{--                                </p>--}}
-{{--                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">--}}
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        5 products--}}
-{{--                                    </li>--}}
+            {{--            <div class="py-24 sm:pt-48">--}}
+            {{--                <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
+            {{--                    <div class="mx-auto max-w-4xl text-center">--}}
+            {{--                        <h2 class="text-base font-semibold leading-7 text-sky-600">Pricing</h2>--}}
+            {{--                        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Pricing plans for--}}
+            {{--                            teams of&nbsp;all&nbsp;sizes</p>--}}
+            {{--                    </div>--}}
+            {{--                    <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">Distinctio et nulla--}}
+            {{--                        eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in.--}}
+            {{--                        Explicabo id ut laborum.</p>--}}
+            {{--                    <div--}}
+            {{--                        class="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">--}}
+            {{--                        <div--}}
+            {{--                            class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 lg:mt-8 lg:rounded-r-none">--}}
+            {{--                            <div>--}}
+            {{--                                <div class="flex items-center justify-between gap-x-4">--}}
+            {{--                                    <h3 id="tier-freelancer" class="text-lg font-semibold leading-8 text-gray-900">--}}
+            {{--                                        Freelancer</h3>--}}
+            {{--                                </div>--}}
+            {{--                                <p class="mt-4 text-sm leading-6 text-gray-600">The essentials to provide your best work--}}
+            {{--                                    for clients.</p>--}}
+            {{--                                <p class="mt-6 flex items-baseline gap-x-1">--}}
+            {{--                                    <span class="text-4xl font-bold tracking-tight text-gray-900">$24</span>--}}
+            {{--                                    <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>--}}
+            {{--                                </p>--}}
+            {{--                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        5 products--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Up to 1,000 subscribers--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Up to 1,000 subscribers--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Basic analytics--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Basic analytics--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        48-hour support response time--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <a href="#" aria-describedby="tier-freelancer"--}}
-{{--                               class="mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 text-sky-600 ring-1 ring-inset ring-sky-200 hover:ring-sky-300">Buy--}}
-{{--                                plan</a>--}}
-{{--                        </div>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        48-hour support response time--}}
+            {{--                                    </li>--}}
+            {{--                                </ul>--}}
+            {{--                            </div>--}}
+            {{--                            <a href="#" aria-describedby="tier-freelancer"--}}
+            {{--                               class="mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 text-sky-600 ring-1 ring-inset ring-sky-200 hover:ring-sky-300">Buy--}}
+            {{--                                plan</a>--}}
+            {{--                        </div>--}}
 
-{{--                        <div--}}
-{{--                            class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 lg:z-10 lg:rounded-b-none">--}}
-{{--                            <div>--}}
-{{--                                <div class="flex items-center justify-between gap-x-4">--}}
-{{--                                    <h3 id="tier-startup" class="text-lg font-semibold leading-8 text-sky-600">--}}
-{{--                                        Startup</h3>--}}
+            {{--                        <div--}}
+            {{--                            class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 lg:z-10 lg:rounded-b-none">--}}
+            {{--                            <div>--}}
+            {{--                                <div class="flex items-center justify-between gap-x-4">--}}
+            {{--                                    <h3 id="tier-startup" class="text-lg font-semibold leading-8 text-sky-600">--}}
+            {{--                                        Startup</h3>--}}
 
-{{--                                    <p class="rounded-full bg-sky-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-sky-600">--}}
-{{--                                        Most popular</p>--}}
-{{--                                </div>--}}
-{{--                                <p class="mt-4 text-sm leading-6 text-gray-600">A plan that scales with your rapidly--}}
-{{--                                    growing business.</p>--}}
-{{--                                <p class="mt-6 flex items-baseline gap-x-1">--}}
-{{--                                    <span class="text-4xl font-bold tracking-tight text-gray-900">$32</span>--}}
-{{--                                    <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>--}}
-{{--                                </p>--}}
-{{--                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">--}}
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        25 products--}}
-{{--                                    </li>--}}
+            {{--                                    <p class="rounded-full bg-sky-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-sky-600">--}}
+            {{--                                        Most popular</p>--}}
+            {{--                                </div>--}}
+            {{--                                <p class="mt-4 text-sm leading-6 text-gray-600">A plan that scales with your rapidly--}}
+            {{--                                    growing business.</p>--}}
+            {{--                                <p class="mt-6 flex items-baseline gap-x-1">--}}
+            {{--                                    <span class="text-4xl font-bold tracking-tight text-gray-900">$32</span>--}}
+            {{--                                    <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>--}}
+            {{--                                </p>--}}
+            {{--                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        25 products--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Up to 10,000 subscribers--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Up to 10,000 subscribers--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Advanced analytics--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Advanced analytics--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        24-hour support response time--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        24-hour support response time--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Marketing automations--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <a href="#" aria-describedby="tier-startup"--}}
-{{--                               class="mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 bg-sky-600 text-white shadow-sm hover:bg-sky-500">Buy--}}
-{{--                                plan</a>--}}
-{{--                        </div>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Marketing automations--}}
+            {{--                                    </li>--}}
+            {{--                                </ul>--}}
+            {{--                            </div>--}}
+            {{--                            <a href="#" aria-describedby="tier-startup"--}}
+            {{--                               class="mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 bg-sky-600 text-white shadow-sm hover:bg-sky-500">Buy--}}
+            {{--                                plan</a>--}}
+            {{--                        </div>--}}
 
-{{--                        <div--}}
-{{--                            class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 lg:mt-8 lg:rounded-l-none">--}}
-{{--                            <div>--}}
-{{--                                <div class="flex items-center justify-between gap-x-4">--}}
-{{--                                    <h3 id="tier-enterprise" class="text-lg font-semibold leading-8 text-gray-900">--}}
-{{--                                        Enterprise</h3>--}}
-{{--                                </div>--}}
-{{--                                <p class="mt-4 text-sm leading-6 text-gray-600">Dedicated support and infrastructure for--}}
-{{--                                    your company.</p>--}}
-{{--                                <p class="mt-6 flex items-baseline gap-x-1">--}}
-{{--                                    <span class="text-4xl font-bold tracking-tight text-gray-900">$48</span>--}}
-{{--                                    <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>--}}
-{{--                                </p>--}}
-{{--                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">--}}
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Unlimited products--}}
-{{--                                    </li>--}}
+            {{--                        <div--}}
+            {{--                            class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 lg:mt-8 lg:rounded-l-none">--}}
+            {{--                            <div>--}}
+            {{--                                <div class="flex items-center justify-between gap-x-4">--}}
+            {{--                                    <h3 id="tier-enterprise" class="text-lg font-semibold leading-8 text-gray-900">--}}
+            {{--                                        Enterprise</h3>--}}
+            {{--                                </div>--}}
+            {{--                                <p class="mt-4 text-sm leading-6 text-gray-600">Dedicated support and infrastructure for--}}
+            {{--                                    your company.</p>--}}
+            {{--                                <p class="mt-6 flex items-baseline gap-x-1">--}}
+            {{--                                    <span class="text-4xl font-bold tracking-tight text-gray-900">$48</span>--}}
+            {{--                                    <span class="text-sm font-semibold leading-6 text-gray-600">/month</span>--}}
+            {{--                                </p>--}}
+            {{--                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Unlimited products--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Unlimited subscribers--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Unlimited subscribers--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Advanced analytics--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Advanced analytics--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        1-hour, dedicated support response time--}}
-{{--                                    </li>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        1-hour, dedicated support response time--}}
+            {{--                                    </li>--}}
 
-{{--                                    <li class="flex gap-x-3">--}}
-{{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
-{{--                                             fill="currentColor" aria-hidden="true">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
-{{--                                                  clip-rule="evenodd"/>--}}
-{{--                                        </svg>--}}
-{{--                                        Marketing automations--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <a href="#" aria-describedby="tier-enterprise"--}}
-{{--                               class="mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 text-sky-600 ring-1 ring-inset ring-sky-200 hover:ring-sky-300">Buy--}}
-{{--                                plan</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--                                    <li class="flex gap-x-3">--}}
+            {{--                                        <svg class="h-6 w-5 flex-none text-sky-600" viewBox="0 0 20 20"--}}
+            {{--                                             fill="currentColor" aria-hidden="true">--}}
+            {{--                                            <path fill-rule="evenodd"--}}
+            {{--                                                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"--}}
+            {{--                                                  clip-rule="evenodd"/>--}}
+            {{--                                        </svg>--}}
+            {{--                                        Marketing automations--}}
+            {{--                                    </li>--}}
+            {{--                                </ul>--}}
+            {{--                            </div>--}}
+            {{--                            <a href="#" aria-describedby="tier-enterprise"--}}
+            {{--                               class="mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 text-sky-600 ring-1 ring-inset ring-sky-200 hover:ring-sky-300">Buy--}}
+            {{--                                plan</a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
             <!-- FAQs -->
             <div
@@ -510,7 +518,8 @@
                         </dt>
                         <dd class="mt-4 lg:col-span-7 lg:mt-0">
                             <p class="text-base leading-7 text-gray-600">
-                                Apispark.net directly forwards your retrieved data to your Logscale repository without caching it, ensuring secure data transfer.
+                                Apispark.net directly forwards your retrieved data to your Logscale repository without
+                                caching it, ensuring secure data transfer.
                             </p>
                         </dd>
                     </div>
@@ -520,7 +529,8 @@
                         </dt>
                         <dd class="mt-4 lg:col-span-7 lg:mt-0">
                             <p class="text-base leading-7 text-gray-600">
-                                Yes, Apispark.net offers customizable job scheduling that allows you to select different intervals and execution times for your jobs.
+                                Yes, Apispark.net offers customizable job scheduling that allows you to select different
+                                intervals and execution times for your jobs.
                             </p>
                         </dd>
                     </div>
@@ -530,7 +540,8 @@
                         </dt>
                         <dd class="mt-4 lg:col-span-7 lg:mt-0">
                             <p class="text-base leading-7 text-gray-600">
-                                Yes, Apispark.net allows you to integrate any number of Logscale repositories, regardless of whether they are the Community or Cloud edition.
+                                Yes, Apispark.net allows you to integrate any number of Logscale repositories,
+                                regardless of whether they are the Community or Cloud edition.
                             </p>
                         </dd>
                     </div>
@@ -540,7 +551,9 @@
                         </dt>
                         <dd class="mt-4 lg:col-span-7 lg:mt-0">
                             <p class="text-base leading-7 text-gray-600">
-                                No, you don't need to install any software or tools to use Apispark.net. The SaaS runs jobs directly on the server, providing a simple and hassle-free job execution experience.
+                                No, you don't need to install any software or tools to use Apispark.net. The SaaS runs
+                                jobs directly on the server, providing a simple and hassle-free job execution
+                                experience.
                             </p>
                         </dd>
                     </div>
@@ -550,7 +563,9 @@
                         </dt>
                         <dd class="mt-4 lg:col-span-7 lg:mt-0">
                             <p class="text-base leading-7 text-gray-600">
-                                You can retrieve data from any REST API endpoint that is accessible over the internet. Additionally, you can optionally authenticate your API endpoints using bearer tokens or header adjustments for added security.
+                                You can retrieve data from any REST API endpoint that is accessible over the internet.
+                                Additionally, you can optionally authenticate your API endpoints using bearer tokens or
+                                header adjustments for added security.
                             </p>
                         </dd>
                     </div>
@@ -560,7 +575,8 @@
                         </dt>
                         <dd class="mt-4 lg:col-span-7 lg:mt-0">
                             <p class="text-base leading-7 text-gray-600">
-                                Yes, Apispark.net offers customizable job scheduling that allows you to select different intervals and execution times for your jobs.
+                                Yes, Apispark.net offers customizable job scheduling that allows you to select different
+                                intervals and execution times for your jobs.
                             </p>
                         </dd>
                     </div>
@@ -580,13 +596,14 @@
                 </div>
                 <div class="mx-auto max-w-2xl text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ready to dive in?</h2>
-                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">Transform your API data management with APISPARK.net. Get started today!</p>
+                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">Transform your API data management
+                        with APISPARK.net. Get started today!</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
                         <a href="{{ route('register') }}"
                            class="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Get
                             started</a>
-{{--                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span--}}
-{{--                                aria-hidden="true">→</span></a>--}}
+                        {{--                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span--}}
+                        {{--                                aria-hidden="true">→</span></a>--}}
                     </div>
                 </div>
                 <div
