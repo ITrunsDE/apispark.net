@@ -8,23 +8,24 @@
                 </div>
 
                 @can('use_jobs')
-                <div class="pb-6">
-                    <a href="{{ route('endpoint-job.index') }}"
-                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Jobs</a>
-                </div>
+                    <div class="pb-6">
+                        <a href="{{ route('endpoint-job.index') }}"
+                           class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Jobs</a>
+                    </div>
                 @endcan
 
                 @can('use_endpoint')
-                <div class="pb-6">
-                    <a href="{{ route('endpoint.index') }}" class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Endpoints</a>
-                </div>
+                    <div class="pb-6">
+                        <a href="{{ route('endpoint.index') }}"
+                           class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Endpoints</a>
+                    </div>
                 @endcan
 
                 @can('use_repository')
-                <div class="pb-6">
-                    <a href="{{ route('repository.index') }}"
-                       class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Repositories</a>
-                </div>
+                    <div class="pb-6">
+                        <a href="{{ route('repository.index') }}"
+                           class="text-sm leading-6 text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400">Repositories</a>
+                    </div>
                 @endcan
 
                 <div class="pb-6">
@@ -90,8 +91,10 @@
         {{--                    </svg>--}}
         {{--                </a>--}}
         {{--            </div>--}}
-        <p class="mt-10 text-center text-xs leading-5 text-gray-500 dark:text-gray-200">
-            &copy; {{ now()->format('Y') }} ITrunsDE, Inc. All rights reserved.
-        </p>
+        <a href="https://it-runs.de/meine-it-projekte/it-projekt-update-available-com/" target="_blank"
+           title="IT-Runs.de"><p class="mt-10 text-center text-xs leading-5 text-gray-500 dark:text-gray-200">
+                &copy; {{ now()->format('Y') }} ITrunsDE, Inc. All rights reserved.
+            </p>
+        </a>
     </div>
 </footer>
