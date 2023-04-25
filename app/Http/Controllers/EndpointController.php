@@ -59,9 +59,9 @@ class EndpointController extends Controller
 
     public function update(EndpointUpdateRequest $request, Endpoint $endpoint): RedirectResponse
     {
-//        dump($request);
+        //        dump($request);
         $data = $request->validated();
-//        dd($data);
+        //        dd($data);
         // reset the information, saved in the database
         if ($data['authentication'] === 'none') {
             $data['authentication_parameters'] = [];

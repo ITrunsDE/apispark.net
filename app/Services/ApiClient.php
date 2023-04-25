@@ -91,7 +91,7 @@ final class ApiClient
                 password: $endpoint->authentication_parameters['basic_password']
             );
         }
-//        $response = $http->get($endpoint->url, $query_params);
+        //        $response = $http->get($endpoint->url, $query_params);
 
         // Basic HTTP REST api call
         return $http->get($endpoint->url, $query_params);
