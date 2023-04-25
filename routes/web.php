@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view(uri: '/', view: 'start')->name(name: 'start');
+Route::view(uri: '/features', view: 'features')->name(name: 'features');
 
 Route::middleware([
     'auth:sanctum',
